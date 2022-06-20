@@ -14,7 +14,7 @@ function SignupFormPage() {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState([]);
 
-    if (sessionUser) return <Redirect to="/" />;
+    if (sessionUser) return <Redirect to="/explore" />;
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -33,7 +33,7 @@ function SignupFormPage() {
         <div className='signuppage'>
             <div className='signupform'>
                 <a href='/'>
-                    <img src='./photos/fotozer-logo2.png' alt='logo-2' />
+                    <img src='./photos/fotozer-logo-form.png' alt='Logo-form' />
                 </a>
                 <p>Join Fotozer today!</p>
                 <form onSubmit={handleSubmit}>
