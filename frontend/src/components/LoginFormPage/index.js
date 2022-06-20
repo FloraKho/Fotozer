@@ -17,7 +17,7 @@ function LoginFormPage() {
 
 
     if (sessionUser) return (
-        <Redirect to="/" />
+        <Redirect to="/explore" />
     );
 
     const handleSubmit = (e) => {
@@ -34,7 +34,7 @@ function LoginFormPage() {
         <div className='loginpage'>
             <div className='center'>
                 <a href='/'>
-                    <img src='./photos/fotozer-logo2.png' alt='logo-2' />
+                    <img src='./photos/fotozer-logo-form.png' alt='logo-2' />
                 </a>
                 <div>
                     <button className='demo' onClick={demouser}>Log in as demo user</button>

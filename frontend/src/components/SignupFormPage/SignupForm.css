@@ -1,0 +1,129 @@
+.signuppage {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(120deg, #2980b9, #8e44ad);
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+}
+
+.signupform {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.signupform img {
+    position: relative;
+    width: 140px;
+    height: 140px;
+}
+
+.signupform p {
+    text-align: center;
+    margin: 5px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+form {
+    box-sizing: border-box;
+    padding: 0 40px;
+}
+
+label {
+    display: flex;
+    margin: 30px 0;
+    top: 50%;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border-bottom: solid black;
+    background: none;
+    margin-left: 20px;
+}
+
+
+.signup {
+    display: flex;
+    justify-content: center;
+}
+
+.signup-btn {
+    align-items: center;
+    appearance: button;
+    background-color: #8e44ad;
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-shrink: 0;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    padding: 10px 15px;
+    text-align: center;
+    text-transform: none;
+    transition: color .13s ease-in-out, background .13s ease-in-out, opacity .13s ease-in-out, box-shadow .13s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.signup-btn:active {
+    background-color: #006AE8;
+}
+
+.signup-btn:hover {
+    background-color: #2980b9;
+}
+
+.accountuser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px;
+}
+
+.accountuser a {
+    text-decoration: none;
+    margin-right: 10px;
+    padding: 0 10px;
+    color: #764abc;
+}
+
+.accountuser a:hover {
+    color: rgb(65, 56, 56);
+}
+
+
+.validation {
+    border: 1px solid;
+    margin: 0;
+    padding: 10px 5px;
+    color: #D63301;
+    background-color: #FFCCBA;
+    list-style: none;
+}
+
+.validation i {
+    margin-right: 8px;
+}
