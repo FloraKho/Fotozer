@@ -1,0 +1,151 @@
+/* LoginNav && LogouNav */
+
+.Navbar {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #24252A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navlist li,
+.a,
+.signout-btn {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    color: #edf0f1;
+    text-decoration: none;
+    list-style: none;
+}
+
+.fa-cloud-arrow-up,
+.fa-github,
+.fa-linkedin {
+    color: #edf0f1;
+    font-size: 24px;
+    margin: 0 10px;
+}
+
+.fa-cloud-arrow-up:hover,
+.fa-github:hover,
+.fa-linkedin:hover {
+    color: #adb5bd;
+}
+
+.Navbar-left img {
+    width: 220px;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+.Navbar-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.navlist {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.navlist li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.navlist li .a {
+    transition: all 0.3s ease 0s;
+
+}
+
+.navlist li .a:hover {
+    color: #adb5bd;
+}
+
+.signout-btn,
+.demousermain {
+    margin-right: 30px;
+    padding: 8px 25px;
+    background-color: #5e60ce;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+}
+
+.signout-btn:hover,
+.demousermain:hover {
+    background-color: rgb(83, 144, 217, 0.8);
+}
+
+.landingpage-navbar {
+    width: 90%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.landingpage-navbar img {
+    width: 220px;
+}
+
+.navbar-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin-left: 40px;
+}
+
+.navbar-center i {
+    font-size: 28px;
+    margin-right: 40px;
+}
+
+.link {
+    text-decoration: none;
+    color: #edf0f1;
+    font-size: 20px;
+    margin-right: 30px;
+}
+
+.link:hover {
+    color: #adb5bd;
+}
+
+
+.demouser {
+    background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-size: 16px;
+    font-weight: 500;
+    height: 3rem;
+    padding: 0 1.4rem;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+    transition: all .5s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.demouser:hover {
+    box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+    transition-duration: .1s;
+}
