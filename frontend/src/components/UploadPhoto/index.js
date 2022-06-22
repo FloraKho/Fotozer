@@ -30,11 +30,16 @@ function UploadPage() {
                 '(\\#[-a-z\\d_]*)?$', 'i');
             return !!pattern.test(str);
         }
-        if (title.length > 50) {
-            errors.push("Title must be within 25 characters");
-        }
-        if (!isValidURL(imgURL) && imgURL.length < 5) {
+        
+        if (!isValidURL(imgURL)) {
             errors.push("Please enter a valid image url");
+        }
+
+        if (title.length > 50) {
+            errors.push("Title must be within 50 characters");
+        } 
+        else if (!title.length){
+            errors.push("Please enter a title");
         }
         setErrors(errors);
     }, [title, description, imgURL])
@@ -79,8 +84,8 @@ function UploadPage() {
                 <form className='upload-form' onSubmit={handleOnSubmit}>
 
                     <div className='form-input'>
-                        <label className="custom-field two">
-                            <input required type="text" placeholder="&nbsp;" value={title} onChange={e => setTitle(e.target.value)} />
+                        <label>
+                            <input type="text" placeholder="" value={title} onChange={e => setTitle(e.target.value)} />
                             <span className="placeholder">Enter Title</span>
                         </label>
                         <label>
