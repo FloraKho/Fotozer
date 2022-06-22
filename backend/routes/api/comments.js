@@ -20,13 +20,17 @@ const validateComments = [
 //create a comment (user only)
 router.post('/', requireAuth, restoreUser, asyncHandler(async (req, res) => {
     const { content, photoId, userId } = req.body;
-    const newComment = await Comment.create({
+    const comment = await Comment.create({
         content: content,
         userId: userId,
         photoId: photoId
     })
+    const newComment = await Comment.findByPk(comment.id, {
+        include: User
+    });
     return res.json(newComment);
 }))
+
 
 //read all comment
 router.get('/photos/:photoId', asyncHandler(async (req, res) => {
