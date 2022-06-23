@@ -72,7 +72,7 @@ export const readPhoto = (photoId) => async (dispatch) => {
 }
 
 //read
-export const readAllPhoto = (userId) => async (dispatch) => {
+export const readAllPhotos = (userId) => async (dispatch) => {
     const response = await csrfFetch(`/api/users/${userId}/photos`);
     if (response.ok) {
         const photos = await response.json();

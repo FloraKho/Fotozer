@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
+import * as sessionActions from "./store/session";
 import LandingPage from "./components/LandingPage";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import UploadPage from "./components/UploadPhoto";
 import ExplorePage from "./components/ExplorePage";
-import * as sessionActions from "./store/session";
+import Photostream from "./components/Photostream";
 
 
 
@@ -37,6 +38,10 @@ function App() {
         <Route path='/explore'>
           <Navigation isLoaded={isLoaded} />
           <ExplorePage />
+        </Route>
+        <Route path='/photostream'>
+          <Navigation isLoaded={isLoaded} />
+          <Photostream />
         </Route>
       </Switch>
     </>
