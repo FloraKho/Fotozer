@@ -38,23 +38,13 @@ function ExplorePage() {
                                 e.preventDefault();
                                 history.push(`/photos/${image.id}`);
                             }}>
-                                {/* <a href={`/photos/${image.id}`} onClick={e => {
-                                    e.preventDefault();
-                                    history.push(`/photos/${image.id}`)
-                                }}> */}
-                                <div>
-                                    <img src={image.imgURL} alt={image.title} />
-                                </div>
-                                <div className='photo-hover'>
+                                <img src={image.imgURL} alt={image.title} />
+                                <div className='photo-overlay'>
                                     <div className='photo-info'>
-                                        {image.title}
-                                        
-                                    </div>
-                                    <div>
-                                        {`by ${image.User.username}`}
+                                        <p className='photo-title'>{image.title}</p>
+                                        <p className='photo-username'>{`by ${image.User.username}`}</p>
                                     </div>
                                 </div>
-                                {/* </a> */}
                             </div>
                         )
                     })}
