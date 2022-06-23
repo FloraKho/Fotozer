@@ -6,7 +6,9 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import UploadPage from "./components/UploadPhoto";
+import ExplorePage from "./components/ExplorePage";
 import * as sessionActions from "./store/session";
+
 
 
 function App() {
@@ -31,6 +33,10 @@ function App() {
         <Route path='/photos/upload'>
           <Navigation isLoaded={isLoaded} />
           <UploadPage />
+        </Route>
+        <Route path='/explore'>
+          <Navigation isLoaded={isLoaded} />
+          <ExplorePage />
         </Route>
       </Switch>
     </>

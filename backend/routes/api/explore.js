@@ -1,15 +1,16 @@
 const express = require('express')
 const asyncHandler = require('express-async-handler');
-const { Photo } = require('../../db/models');
+const { Photo, User } = require('../../db/models');
 
 const router = express.Router();
 
 //read all photos
 router.get('/', asyncHandler(async (req, res) => {
     const images = await Photo.findAll({
-        order: [['updatedAt', 'DESC']]
+        order: [['updatedAt', 'DESC']],
+        include: User
     })
-    res.json(images);
+    return res.json(images);
 }))
 
 
