@@ -13,6 +13,7 @@ function LandingPage() {
         dispatch(sessionActions.login({ credential: "Demo_User", password: "demouser" }));
         history.push('/explore');
     }
+
     if (sessionUser) return <Redirect to="/explore" />;
 
     return (
@@ -20,7 +21,7 @@ function LandingPage() {
             <div className='landingpage'>
                 <div className='landingpage-navbar'>
                     <div className='landingpage-navbar-left'>
-                        <img src='../photos/Fotozer.png' alt='Fotozer-Text-Logo' />
+                        <img src='../photos/fotozer-logo-1.png' alt='fotozer_logo' />
                     </div>
                     <ul className='navbar-center'>
                         <li>

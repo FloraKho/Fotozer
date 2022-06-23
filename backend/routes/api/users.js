@@ -57,7 +57,7 @@ router.get('/:userId/photos', asyncHandler(async (req, res) => {
         order: [['updatedAt', 'DESC']],
         include: User
     })
-    res.json(photos)
+    return res.json(photos)
 }))
 
 module.exports = router;

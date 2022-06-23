@@ -1,11 +1,16 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import LoginNav from './LoginNav';
 import LogoutNav from './LoginNav';
 import './Navigation.css';
 
 function Navigation({ isLoaded }) {
     const sessionUser = useSelector(state => state.session.user);
+
+    if (!sessionUser) return (
+        <Redirect to='/' />
+    );
 
     return (
         <>

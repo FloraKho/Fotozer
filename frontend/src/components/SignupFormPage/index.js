@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 
 
 function SignupFormPage() {
     const dispatch = useDispatch();
+    const history = useHistory();
     const sessionUser = useSelector((state) => state.session.user);
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
@@ -32,9 +33,7 @@ function SignupFormPage() {
     return (
         <div className='signuppage'>
             <div className='signupform'>
-                <a href='/'>
-                    <img src='./photos/fotozer-logo-form.png' alt='Logo-form' />
-                </a>
+                <img onClick={() => history.push('/')} src='../photos/fotozer-logo-2.png' alt='fotozer_logo' />
                 <p>Join Fotozer today!</p>
                 <form onSubmit={handleSubmit}>
                     <ul>
