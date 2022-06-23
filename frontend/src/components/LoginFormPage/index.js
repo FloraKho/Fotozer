@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import './LoginForm.css';
 
 function LoginFormPage() {
     const dispatch = useDispatch();
+    const history = useHistory();
     const sessionUser = useSelector(state => state.session.user);
     const [credential, setCredential] = useState('');
     const [password, setPassword] = useState('');
@@ -33,9 +34,7 @@ function LoginFormPage() {
     return (
         <div className='loginpage'>
             <div className='center'>
-                <a href='/'>
-                    <img src='./photos/fotozer-logo-form.png' alt='logo-2' />
-                </a>
+                <img onClick={() => history.push('/')} src='../photos/fotozer-logo-2.png' alt='fotozer_logo' />
                 <div>
                     <button className='demo' onClick={demouser}>Log in as demo user</button>
                 </div>

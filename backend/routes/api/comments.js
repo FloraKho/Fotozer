@@ -36,7 +36,9 @@ router.post('/', requireAuth, restoreUser, asyncHandler(async (req, res) => {
 router.get('/photos/:photoId', asyncHandler(async (req, res) => {
     const { photoId } = req.params;
     const comments = await Comment.findAll({
-        where: { photoId: photoId },
+        where: { 
+            photoId: photoId 
+        },
         include: User
     });
     return res.json(comments);
@@ -56,7 +58,6 @@ router.put('/:commentId', requireAuth, restoreUser, asyncHandler(async (req, res
 //delete comment (user only)
 router.delete('/:commentId', requireAuth, asyncHandler(async (req, res) => {
     const { commentId } = req.params;
-
     const deleteComment = await Comment.findByPk(commentId);
     await deleteComment.destroy();
     return res.json(deleteComment);

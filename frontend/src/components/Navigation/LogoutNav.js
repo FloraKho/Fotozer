@@ -18,7 +18,7 @@ function LogoutNav() {
     return (
         <div className='landingpage-navbar'>
             <div className='landingpage-navbar-left'>
-                <img src='../photos/Fotozer.png' alt='Fotozer-Text-Logo' />
+                <img onClick={() => history.push('/explore')} src='../photos/fotozer-logo-1' alt='fotozer_logo' />
             </div>
             <ul className='navbar-center'>
                 <li>
