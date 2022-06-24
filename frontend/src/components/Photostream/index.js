@@ -18,13 +18,10 @@ function Photostream() {
     const photos = useSelector(state => state.photos);
     const photoArr = Object.values(photos).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
 
-    console.log('photoArr........here ', photoArr);
-
     useEffect(() => {
         if (userId) {
             dispatch(readAllPhotos(userId));
         }
-
     }, [dispatch, userId]);
 
     useEffect(() => {
@@ -48,7 +45,7 @@ function Photostream() {
                         return (
                             <div key={photo.id} className='myphoto-display' onClick={(e) => {
                                 e.preventDefault();
-                                history.push(`/photos/${photo.id}`);
+                                history.push(`/photos/${photo?.id}`);
                             }}>
                                 <img src={photo.imgURL} alt={photo.title} />
                             </div>
