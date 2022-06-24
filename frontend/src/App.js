@@ -49,7 +49,7 @@ function App() {
           <Navigation isLoaded={isLoaded} />
           <Favorites />
         </Route>
-        <Route>
+        <Route path='/photos/:photoId'>
           <Navigation isLoaded={isLoaded} />
           <PhotoDetailPage />
         </Route>
