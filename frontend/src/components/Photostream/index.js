@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { readAllPhotos } from '../../store/photos';
 import MyNavigation from '../MyNavigation';
 import Banner from '../Banner';
+import './Photostream.css';
 
 function Photostream() {
 
@@ -15,8 +16,9 @@ function Photostream() {
 
 
     const photos = useSelector(state => state.photos);
-    const photoArr = Object.values(photos);
+    const photoArr = Object.values(photos).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
 
+    console.log('photoArr........here ', photoArr);
 
     useEffect(() => {
         if (userId) {
@@ -34,7 +36,6 @@ function Photostream() {
     if (!photoArr.length > 0) return (
         <p className='loading'><i className="fa-solid fa-spinner"></i> Loading...</p>
     )
-
     return (
         <>
             <div className='photostream-page'>
@@ -42,10 +43,10 @@ function Photostream() {
                 <Banner sessionUser={sessionUser} />
                 <MyNavigation />
 
-                <div className='photo-gallery'>
+                <div className='myphoto-gallery'>
                     {photoArr.map((photo) => {
                         return (
-                            <div key={photo.id} className='photo-display' onClick={(e) => {
+                            <div key={photo.id} className='myphoto-display' onClick={(e) => {
                                 e.preventDefault();
                                 history.push(`/photos/${photo.id}`);
                             }}>

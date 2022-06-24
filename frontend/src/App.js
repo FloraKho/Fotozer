@@ -10,6 +10,7 @@ import UploadPage from "./components/UploadPhoto";
 import ExplorePage from "./components/ExplorePage";
 import Photostream from "./components/Photostream";
 import Favorites from "./components/Favorites";
+import PhotoDetailPage from "./components/PhotoDetailPage";
 
 
 
@@ -47,6 +48,10 @@ function App() {
         <Route path='/favorites'>
           <Navigation isLoaded={isLoaded} />
           <Favorites />
+        </Route>
+        <Route>
+          <Navigation isLoaded={isLoaded} />
+          <PhotoDetailPage />
         </Route>
       </Switch>
     </>
