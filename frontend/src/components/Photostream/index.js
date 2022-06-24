@@ -12,8 +12,8 @@ function Photostream() {
 
     const userId = useSelector(state => state.session.user?.id);
     const sessionUser = useSelector(state => state.session.user);
-  
-    
+
+
     const photos = useSelector(state => state.photos);
     const photoArr = Object.values(photos);
 
@@ -37,22 +37,23 @@ function Photostream() {
 
     return (
         <>
-        <div className='photostream-page'>
-                <Banner sessionUser={sessionUser}/>  
+            <div className='photostream-page'>
+
+                <Banner sessionUser={sessionUser} />
                 <MyNavigation />
-     
-            <div className='photo-gallery'>
-            {photoArr.map((photo) => {
-                return (
-                    <div key={photo.id} className='photo-display' onClick={(e) => {
-                        e.preventDefault();
-                        history.push(`/photos/${photo.id}`);
-                    }}>
-                        <img src={photo.imgURL} alt={photo.title} />
-                    </div>
-                )
-            })}
-            </div>
+
+                <div className='photo-gallery'>
+                    {photoArr.map((photo) => {
+                        return (
+                            <div key={photo.id} className='photo-display' onClick={(e) => {
+                                e.preventDefault();
+                                history.push(`/photos/${photo.id}`);
+                            }}>
+                                <img src={photo.imgURL} alt={photo.title} />
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
         </>
     )
