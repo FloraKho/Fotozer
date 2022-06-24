@@ -72,7 +72,7 @@ function UploadPage() {
         <div className='uploadImg-page'>
             <div className='uploadImg-center'>
                 <div className='back-to-user-photostream'>
-                    <button onClick={() => history.goBack()}><i className="fa-solid fa-circle-arrow-left"></i>Back</button>
+                    <button onClick={() => history.goBack()}><i className="fa-solid fa-circle-arrow-left"></i> Back</button>
                 </div>
                 <div className="errors">
                     <ul>

@@ -32,7 +32,7 @@
 .fa-cloud-arrow-up:hover,
 .fa-github:hover,
 .fa-linkedin:hover {
-    color: #adb5bd;
+    color: #ced4da;
 }
 
 .Navbar-left img {
@@ -66,7 +66,7 @@
 }
 
 .navlist li .a:hover {
-    color: #adb5bd;
+    color: #ced4da;
 }
 
 .signout-btn,

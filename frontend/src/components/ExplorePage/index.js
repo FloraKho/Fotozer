@@ -11,8 +11,6 @@ function ExplorePage() {
     const history = useHistory();
     const allImages = useSelector((state) => state.images.entries);
 
-    console.log(allImages, '......allImages');
-
     useEffect(() => {
         dispatch(loadAllImg())
     }, [dispatch]);

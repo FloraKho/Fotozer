@@ -1,0 +1,60 @@
+.fa-trash-can {
+    color: #edf0f1;
+    font-size: 24px;
+    margin: 0 10px;
+}
+
+.fa-trash-can:hover {
+    color: #ced4da;
+}
+
+/* .delete-form {
+    border: 10px solid rgba(0,0,0,0.3);
+    border-radius: 4px;
+} */
+
+.modal-title {
+    font-size: 32px;
+}
+
+.modal-text {
+    padding: 0 2rem;
+    margin: 10px 0;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.modal-button {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-button button {
+    transition: 0.2s;
+    background-color: transparent;
+    color: #8a8a8a;
+    min-width: 3em;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #8a8a8a;
+    user-select: none;
+    display: inline-block;
+    width: 300px;
+    max-width: 90%;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+.modal-button button:hover{
+    color: #fafafa;
+    background-color: #8a8a8a;
+}
+
+.modal-button button:active,
+.modal-button button:focus {
+    color: #fafafa;
+    background-color: #8a8a8a;
+}

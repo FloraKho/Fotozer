@@ -51,13 +51,13 @@ router.post(
 router.get('/:userId/photos', asyncHandler(async (req, res) => {
     const { userId } = req.params;
     const photos = await Photo.findAll({
+        order: [['createdAt', 'DESC']],
         where: {
             userId: userId
         },
-        order: [['updatedAt', 'DESC']],
         include: User
     })
-    return res.json(photos)
+    return res.json(photos);
 }))
 
 module.exports = router;
