@@ -21,7 +21,7 @@ function LoginNav() {
             <header>
                 <nav className='Navbar'>
                     <div className='Navbar-left'>
-                        <img onClick={() => history.push('/explore')} src='../photos/fotozer-logo-1' alt='fotozer_logo' />
+                        <img onClick={() => history.push('/explore')} src='../photos/fotozer-logo-1.png' alt='fotozer_logo' />
                         <ul className='navlist'>
                             <li>
                                 <Link className='a' to='/photostream'>You</Link>
