@@ -26,7 +26,7 @@
 }
 
 .myphoto-display {
-    margin-top: 20px;
+    margin: 20px 5px;
     position: relative;
     cursor: pointer;
 }
