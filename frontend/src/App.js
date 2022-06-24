@@ -9,6 +9,7 @@ import Navigation from "./components/Navigation";
 import UploadPage from "./components/UploadPhoto";
 import ExplorePage from "./components/ExplorePage";
 import Photostream from "./components/Photostream";
+import Favorites from "./components/Favorites";
 
 
 
@@ -42,6 +43,10 @@ function App() {
         <Route path='/photostream'>
           <Navigation isLoaded={isLoaded} />
           <Photostream />
+        </Route>
+        <Route path='/favorites'>
+          <Navigation isLoaded={isLoaded} />
+          <Favorites />
         </Route>
       </Switch>
     </>
