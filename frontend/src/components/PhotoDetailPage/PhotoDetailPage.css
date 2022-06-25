@@ -1,18 +1,18 @@
-.photodetailpage {
+.pd-page {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
 
-.photodetail-container {
+.pd-1 {
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #343a40;
 }
 
-.back {
+.pd-1-back {
     margin-left: 15px;
     margin-top: 10px;
     color: #edf0f1;
@@ -21,18 +21,18 @@
     font-family: 'Lato', sans-serif;
 }
 
-.back:hover {
+.pd-1-back:hover {
     color: #ced4da;
 }
 
-.single-photo {
+.pd-1-photo {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 5px 0;
 }
 
-.single-photo img {
+.pd-1-photo img {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -42,7 +42,7 @@
     object-position: center;
 }
 
-.photodetail-delete-fav {
+.pd-delete-fav {
     display: flex;
     justify-content: flex-end;
     margin-right: 10%;
@@ -50,6 +50,9 @@
 }
 
 /* user avatar */
+.user-avatar {
+    margin-right: 20px;
+}
 
 .avatar {
     vertical-align: middle;
@@ -59,53 +62,178 @@
     margin-bottom: 5px;
 }
 
+.pd-2-photo-edit {
+    display: flex;
+    justify-content: center;
+    /* margin: 30px 10px; */
+}
+
+.pd-2-username {
+    font-family: 'Kanit', sans-serif;
+    color: #0077b6;
+    font-size: 24px;
+}
 
 /* form */
 
-
-/* photo information */
-
-/* .photodetail-bottom {
-    display: flex;
-    margin: 30px 20px;
+.pd-2-form {
+    margin-top: 10px;
 }
 
-.photodetail-left,
-.photodetail-right {
-    flex: 50%;
-    display: flex;
-    flex-direction: column;
-}
-
-.user-avatar {
+.pd-2-title-description {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 10%;
+    width: 100%;
+    line-height: 2;
 }
 
-.avatar {
-    vertical-align: middle;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+.input {
+    width:400px;
     margin-bottom: 5px;
+    font-size: 16px;
 }
 
-.user-avatar p {
-    font-weight: 700;
-    font-size: 20px;
+.textarea {
+    width: 400px;
+    height: 80px;
+    resize: vertical;
+    margin-left: 19px;
+    overflow-x: hidden;
+    font-size: 16px;
 }
 
-.photodetail-edit {
-    display: flex;
+.input,
+.textarea {
+    border: solid 2px rgb(72, 149, 239, 0.8);
+    border-radius: 5px;
 }
 
-.info-display {
+.input:hover,
+.textarea:hover {
+    background-color: #f8f9fa;
+}
+
+.pd-2-btn {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    margin-left: 30px;
-} */
+    align-items: center;
+    padding: 6px 14px;
+    margin: 8px 5px;
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+    background-origin: border-box;
+}
 
+.pd-2-btn:hover {
+    box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+    outline: 0;
+}
+
+
+.pd-2-error {
+    border: 1px solid;
+        margin-left: 20px;
+        margin-bottom: 5px;
+        padding: 8px 5px;
+        color: #D63301;
+        background-color: #FFCCBA;
+        list-style: none;
+}
+
+/* photo information */
+
+.pd-2 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.pd-2-left,
+.pd-2-right {
+    float: left;
+    width: 50%;
+    margin: 30px 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .pd-left,
+    .pd-2-right {
+        width: 100%;
+    }
+}
+
+
+.pd-2-display {
+    position: relative;
+    margin-top: 10px;
+    width: 450px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pd-2-display:hover {
+    background: #f8f9fa;
+}
+
+
+.pd-2-edit-btn {
+    opacity: 0;
+}
+
+.pd-2-display:hover .pd-2-edit-btn {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.fa-pen-to-square {
+    color: #adb5bd;
+}
+
+
+.pd-2-display:hover {
+    cursor: pointer;
+}
+
+.title-description-display p {
+    margin: 10px 15px;
+    font-size: 16px;
+    color: #495057;
+    line-height: 1.5;
+}
+
+.title-description-display h3 {
+    font-size: 18px;
+    color: #0d1b2a;
+
+}
+
+
+/* right side information */
+
+.pd-2-right {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pd-2-count {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pd-2-faves,
+.pd-2-comments {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.pd-2-date {
+    display: flex;
+        justify-content: center;
+}

@@ -16,6 +16,14 @@ function PhotoDetailPage() {
 
     const currentTitle = photo?.title;
     const currentDescription = photo?.description;
+   
+    const createdAt = new Date(photo?.createdAt);
+    console.log(createdAt, '......createdAt');
+    // const date = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }).format(createdAt);
+    // console.log(date,'......date');
+    const formatted = createdAt.toLocaleDateString('en-us', { year: 'numeric', month: 'short', day: '2-digit' });
+    console.log(formatted, '....formatted');
+    
 
     const [edit, setEdit] = useState(false);
     const [title, setTitle] = useState(currentTitle);
@@ -66,16 +74,16 @@ function PhotoDetailPage() {
 
     return (
         <>
-            <div className='photodetailpage'>
-                <div className='photodetail-container'>
-                    <div className='back' onClick={() => history.push('/explore')}>
+            <div className='pd-page'>
+                <div className='pd-1'>
+                    <div className='pd-1-back' onClick={() => history.push('/explore')}>
                         <h3><i className="fa-solid fa-arrow-left"></i> Back to explore</h3>
                     </div>
-                    <div className='single-photo'>
+                    <div className='pd-1-photo'>
                         <img src={photo?.imgURL} alt={photo.title} />
                     </div>
 
-                    <div className='photodetail-delete-fav'>
+                    <div className='pd-delete-fav'>
                         {sessionUser?.id === photo?.userId ? (
                             <>
                                 <DeletePhoto photo={photo} />
@@ -85,58 +93,74 @@ function PhotoDetailPage() {
                 </div>
 
 
-                <div className='photodetail-bottom'>
-                    <div className='photodetail-left'>
-                        <div className='photodetail-edit'>
+                <div className='pd-2'>
+                    <div className='pd-2-left'>
+                        <div className='pd-2-photo-edit'>
                             <div className='user-avatar'>
-                                <img className='avatar' src='../photos/user-1.png' alt='user_photo' /> 
-                                <p>{photo.User?.username}</p>
+                                <img className='avatar' src='../photos/user-2.png' alt='user_photo' />
+                                
                             </div>
-                            
+                            <div>
+
+                                <p className='pd-2-username'>{photo.User?.username}</p>
                             {sessionUser.id === photo.userId && edit ? (
-                                <form className='info-form' onSubmit={handleEditSubmit}>
+                                <div>
+                                <form className='pd-2-form' onSubmit={handleEditSubmit}>
                                     <div>
                                         <ul>
                                             {errors.map(error => (
-                                                <li className="validation" key={error}>{error}</li>
+                                                <li className="pd-2-error" key={error}>{error}</li>
                                             ))}
                                         </ul>
                                     </div>
-                                    <div className='photo-form'>
+                                    <div className='pd-2-title-description'>
                                         <input className='input' type='text'
                                             value={title}
                                             required
                                             onChange={e => setTitle(e.target.value)}
                                             placeholder='Add a title'
                                         />
-                                        <input className='textarea'
+
+                                        <textarea className='textarea'
                                             type='text'
                                             value={description}
                                             onChange={e => setDiscription(e.target.value)}
                                             placeholder='Enter description'
-
                                         />
-                                        <button type='submit' disabled={!!errors.length}>Save</button>
+
+                                        <button className='pd-2-btn' type='submit' disabled={!!errors.length}>Save</button>
+
                                     </div>
                                 </form>
-                           
+                                </div>
+
                             ) : (
-                                <div className='info-display' onClick={handleEditState}>
+                                <div className='pd-2-display' onClick={handleEditState}>
                                     <div className='title-description-display'>
-                                            <h3>{currentTitle}</h3>
-                                            <p>{currentDescription.length ? currentDescription : 'Add a description'}</p>
+                                        <h3>{currentTitle}</h3>
+                                                <p>{currentDescription.length ? currentDescription : 'No description here! Click to add!'}</p>
                                     </div>
-                                    {/* <div className='info-display-hover'>
+                                    <div className='pd-2-edit-btn'>
                                          <i className="fa-solid fa-pen-to-square"></i>
-                                    </div> */}
+                                    </div>
                                 </div>
                             )}
+                            </div>
                         </div>
                     </div>
-                    <div className='photodetail-right'>
-                        <div>
-                            <p>fav.length here</p>
-                            <p>comment.length here</p>
+                    <div className='pd-2-right'>
+                        <div className='pd-2-count'>
+                            <div className='pd-2-faves'>
+                                <p>10</p>
+                                <p>faves</p>
+                            </div>
+                            <div className='pd-2-comments'>
+                                <p>3</p>
+                                <p>comments</p>
+                            </div>
+                        </div>
+                        <div className='pd-2-date'>
+                            <p>Taken on {formatted}</p>
                         </div>
                     </div>
                 </div>
