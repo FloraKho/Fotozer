@@ -133,7 +133,7 @@ function PhotoDetailPage() {
                                 <div className='pd-2-display' onClick={handleEditState}>
                                     <div className='title-description-display'>
                                         <h3>{currentTitle}</h3>
-                                                <p>{currentDescription.length ? currentDescription : 'No description here! Click to add!'}</p>
+                                                <p>{currentDescription}</p>
                                     </div>
                                     <div className='pd-2-edit-btn'>
                                          <i className="fa-solid fa-pen-to-square"></i>
