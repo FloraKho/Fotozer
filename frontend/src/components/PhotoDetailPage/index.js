@@ -18,13 +18,8 @@ function PhotoDetailPage() {
     const currentDescription = photo?.description;
    
     const createdAt = new Date(photo?.createdAt);
-    console.log(createdAt, '......createdAt');
-    // const date = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }).format(createdAt);
-    // console.log(date,'......date');
     const formatted = createdAt.toLocaleDateString('en-us', { year: 'numeric', month: 'short', day: '2-digit' });
-    console.log(formatted, '....formatted');
     
-
     const [edit, setEdit] = useState(false);
     const [title, setTitle] = useState(currentTitle);
     const [description, setDiscription] = useState('');
