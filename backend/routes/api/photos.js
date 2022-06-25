@@ -1,7 +1,7 @@
 const express = require('express')
 const asyncHandler = require('express-async-handler');
 const { requireAuth, restoreUser } = require('../../utils/auth');
-const { Photo, Comment } = require('../../db/models');
+const { Photo, Comment, User } = require('../../db/models');
 
 
 const { check } = require('express-validator');
@@ -39,14 +39,18 @@ router.post('/', requireAuth, asyncHandler(async (req, res) => {
 //read specific photo
 router.get('/:photoId', asyncHandler(async (req, res) => {
     const { photoId } = req.params;
-    const photo = await Photo.findByPk(photoId);
+    const photo = await Photo.findByPk(photoId, {
+        include: User
+    });
     return res.json(photo);
 }))
 
 //update photo
 router.put('/:photoId', requireAuth, restoreUser, asyncHandler(async (req, res) => {
     const { photoId } = req.params;
-    const photo = await Photo.findByPk(photoId);
+    const photo = await Photo.findByPk(photoId, {
+        include: User
+    });
     const { title, description } = req.body;
     await photo.update({
         title, description

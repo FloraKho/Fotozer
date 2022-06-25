@@ -19,7 +19,7 @@ function PhotoDetailPage() {
 
     const [edit, setEdit] = useState(false);
     const [title, setTitle] = useState(currentTitle);
-    const [description, setDiscription] = useState(currentDescription);
+    const [description, setDiscription] = useState('');
     const [errors, setErrors] = useState([]);
 
     useEffect(() => {
@@ -88,23 +88,28 @@ function PhotoDetailPage() {
                 <div className='photodetail-bottom'>
                     <div className='photodetail-left'>
                         <div className='photodetail-edit'>
-                            <img className='avatar' src='../photos/user-1.png' alt='user_photo'/> 
+                            <div className='user-avatar'>
+                                <img className='avatar' src='../photos/user-1.png' alt='user_photo' /> 
+                                <p>{photo.User?.username}</p>
+                            </div>
+                            
                             {sessionUser.id === photo.userId && edit ? (
-                                <form onSubmit={handleEditSubmit}>
-                                    <div className="errors">
+                                <form className='info-form' onSubmit={handleEditSubmit}>
+                                    <div>
                                         <ul>
                                             {errors.map(error => (
-                                                <li key={error}>{error}</li>
+                                                <li className="validation" key={error}>{error}</li>
                                             ))}
                                         </ul>
                                     </div>
-                                    <div>
-                                        <input type='text'
+                                    <div className='photo-form'>
+                                        <input className='input' type='text'
                                             value={title}
                                             required
                                             onChange={e => setTitle(e.target.value)}
+                                            placeholder='Add a title'
                                         />
-                                        <textarea
+                                        <input className='textarea'
                                             type='text'
                                             value={description}
                                             onChange={e => setDiscription(e.target.value)}
@@ -114,24 +119,24 @@ function PhotoDetailPage() {
                                         <button type='submit' disabled={!!errors.length}>Save</button>
                                     </div>
                                 </form>
+                           
                             ) : (
-                                <div onClick={handleEditState}>
-                                    <p>{currentTitle}</p>
-                                    <p>{currentDescription}</p>
+                                <div className='info-display' onClick={handleEditState}>
+                                    <div className='title-description-display'>
+                                            <h3>{currentTitle}</h3>
+                                            <p>{currentDescription.length ? currentDescription : 'Add a description'}</p>
+                                    </div>
+                                    {/* <div className='info-display-hover'>
+                                         <i className="fa-solid fa-pen-to-square"></i>
+                                    </div> */}
                                 </div>
                             )}
-                        </div>
-                        <div className='photodetail-add-comment'>
-                            <p>Comment Component here</p>
                         </div>
                     </div>
                     <div className='photodetail-right'>
                         <div>
                             <p>fav.length here</p>
                             <p>comment.length here</p>
-                        </div>
-                        <div>
-                            <p>Albums put here if we have</p>
                         </div>
                     </div>
                 </div>
