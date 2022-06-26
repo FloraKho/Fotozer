@@ -90,7 +90,7 @@
 }
 
 .input {
-    width:400px;
+    width: 400px;
     margin-bottom: 5px;
     font-size: 16px;
 }
@@ -136,12 +136,12 @@
 
 .pd-2-error {
     border: 1px solid;
-        margin-left: 20px;
-        margin-bottom: 5px;
-        padding: 8px 5px;
-        color: #D63301;
-        background-color: #FFCCBA;
-        list-style: none;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    padding: 8px 5px;
+    color: #D63301;
+    background-color: #FFCCBA;
+    list-style: none;
 }
 
 /* photo information */
@@ -161,6 +161,7 @@
 
 
 @media screen and (max-width: 600px) {
+
     .pd-left,
     .pd-2-right {
         width: 100%;
@@ -236,5 +237,5 @@
 
 .pd-2-date {
     display: flex;
-        justify-content: center;
+    justify-content: center;
 }
