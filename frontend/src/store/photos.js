@@ -128,7 +128,7 @@ const photoReducer = (state = initialState, action) => {
             action.photos.forEach(photo => {
                 newState[photo.id] = photo;
             });
-            return { ...state, ...newState };
+            return { ...newState };
 
         case EDIT_PHOTO:
             return {

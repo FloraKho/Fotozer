@@ -4,6 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { readPhoto, updatePhoto } from '../../store/photos';
 import DeletePhoto from './DeletePhoto';
 import Comments from '../Comments';
+import Count from './Count';
 import './PhotoDetailPage.css';
 
 
@@ -144,16 +145,7 @@ function PhotoDetailPage() {
                         </div>
                     </div>
                     <div className='pd-2-right'>
-                        <div className='pd-2-count'>
-                            <div className='pd-2-faves'>
-                                <p>10</p>
-                                <p>faves</p>
-                            </div>
-                            <div className='pd-2-comments'>
-                                <p>3</p>
-                                <p>comments</p>
-                            </div>
-                        </div>
+                        <Count photoId={photoId}/>
                         <div className='pd-2-date'>
                             <p>Taken on {formatted}</p>
                         </div>

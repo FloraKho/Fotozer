@@ -49,10 +49,13 @@ router.put('/:commentId', requireAuth, restoreUser, asyncHandler(async (req, res
     const { commentId } = req.params;
     const oldComment = await Comment.findByPk(commentId);
     const { content } = req.body;
-    const updatedComment = await oldComment.update({
+    await oldComment.update({
         content
     })
-    return res.json(updatedComment);
+    const comment = await Comment.findByPk(commentId, { 
+        include: User
+    });
+    return res.json(comment);
 }))
 
 //delete comment (user only)

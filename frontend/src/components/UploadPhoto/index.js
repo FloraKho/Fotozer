@@ -62,7 +62,6 @@ function UploadPage() {
 
     const handleCancelSubmit = async (e) => {
         e.preventDefault();
-        setErrors([]);
         setTitle('');
         setDiscription('');
         setImgURL('');
