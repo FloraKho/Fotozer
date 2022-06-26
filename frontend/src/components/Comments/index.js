@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { readComments } from '../../store/comments';
 import CommentForm from './CommentForm';
-// import CommentDisplay from './CommentDisplay';
+import CommentDisplay from './CommentDisplay';
 
 
 function Comments({photoId}){
@@ -24,7 +24,16 @@ function Comments({photoId}){
     return (
         <div className='comments-part'>
             <CommentForm sessionUser={sessionUser} photoId={photoId} />
-            {/* <CommentDisplay /> */}
+            <div className="comments-container">
+                {commentsArr.map((comment) => (
+                    <CommentDisplay
+                        key={comment.id}
+                        comment={comment}
+                        sessionUser={sessionUser}
+                        photoId={photoId}
+                    />
+                ))}
+            </div>
         </div>
     )
 }
