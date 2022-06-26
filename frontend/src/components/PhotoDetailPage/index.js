@@ -135,9 +135,9 @@ function PhotoDetailPage() {
                                             <h3>{currentTitle}</h3>
                                             <p>{currentDescription}</p>
                                         </div>
-                                        <div className='pd-2-edit-btn'>
-                                            <i className="fa-solid fa-pen-to-square"></i>
-                                        </div>
+                                            {sessionUser.id === photo.userId && (<div className='pd-2-edit-btn'>
+                                                <i className="fa-solid fa-pen-to-square"></i>
+                                            </div>)}
                                     </div>
                                 )}
                             </div>
