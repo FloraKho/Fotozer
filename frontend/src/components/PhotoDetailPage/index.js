@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { readPhoto, updatePhoto } from '../../store/photos';
 import DeletePhoto from './DeletePhoto';
+import Comments from '../Comments';
 import './PhotoDetailPage.css';
 
 
@@ -16,10 +17,10 @@ function PhotoDetailPage() {
 
     const currentTitle = photo?.title;
     const currentDescription = photo?.description;
-   
+
     const createdAt = new Date(photo?.createdAt);
     const formatted = createdAt.toLocaleDateString('en-us', { year: 'numeric', month: 'short', day: '2-digit' });
-    
+
     const [edit, setEdit] = useState(false);
     const [title, setTitle] = useState(currentTitle);
     const [description, setDiscription] = useState('');
@@ -87,59 +88,58 @@ function PhotoDetailPage() {
                     </div>
                 </div>
 
-
                 <div className='pd-2'>
                     <div className='pd-2-left'>
                         <div className='pd-2-photo-edit'>
                             <div className='user-avatar'>
                                 <img className='avatar' src='../photos/user-2.png' alt='user_photo' />
-                                
+
                             </div>
                             <div>
 
                                 <p className='pd-2-username'>{photo.User?.username}</p>
-                            {sessionUser.id === photo.userId && edit ? (
-                                <div>
-                                <form className='pd-2-form' onSubmit={handleEditSubmit}>
+                                {sessionUser.id === photo.userId && edit ? (
                                     <div>
-                                        <ul>
-                                            {errors.map(error => (
-                                                <li className="pd-2-error" key={error}>{error}</li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                    <div className='pd-2-title-description'>
-                                        <input className='input' type='text'
-                                            value={title}
-                                            required
-                                            onChange={e => setTitle(e.target.value)}
-                                            placeholder='Add a title'
-                                        />
+                                        <form className='pd-2-form' onSubmit={handleEditSubmit}>
+                                            <div>
+                                                <ul>
+                                                    {errors.map(error => (
+                                                        <li className="pd-2-error" key={error}>{error}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                            <div className='pd-2-title-description'>
+                                                <input className='input' type='text'
+                                                    value={title}
+                                                    required
+                                                    onChange={e => setTitle(e.target.value)}
+                                                    placeholder='Add a title'
+                                                />
 
-                                        <textarea className='textarea'
-                                            type='text'
-                                            value={description}
-                                            onChange={e => setDiscription(e.target.value)}
-                                            placeholder='Enter description'
-                                        />
+                                                <textarea className='textarea'
+                                                    type='text'
+                                                    value={description}
+                                                    onChange={e => setDiscription(e.target.value)}
+                                                    placeholder='Enter description'
+                                                />
 
-                                        <button className='pd-2-btn' type='submit' disabled={!!errors.length}>Save</button>
+                                                <button className='pd-2-btn' type='submit' disabled={!!errors.length}>Save</button>
 
+                                            </div>
+                                        </form>
                                     </div>
-                                </form>
-                                </div>
 
-                            ) : (
-                                <div className='pd-2-display' onClick={handleEditState}>
-                                    <div className='title-description-display'>
-                                        <h3>{currentTitle}</h3>
-                                                <p>{currentDescription}</p>
+                                ) : (
+                                    <div className='pd-2-display' onClick={handleEditState}>
+                                        <div className='title-description-display'>
+                                            <h3>{currentTitle}</h3>
+                                            <p>{currentDescription}</p>
+                                        </div>
+                                        <div className='pd-2-edit-btn'>
+                                            <i className="fa-solid fa-pen-to-square"></i>
+                                        </div>
                                     </div>
-                                    <div className='pd-2-edit-btn'>
-                                         <i className="fa-solid fa-pen-to-square"></i>
-                                    </div>
-                                </div>
-                            )}
+                                )}
                             </div>
                         </div>
                     </div>
@@ -158,6 +158,10 @@ function PhotoDetailPage() {
                             <p>Taken on {formatted}</p>
                         </div>
                     </div>
+                </div>
+                <div className='pd-3'>
+                    <Comments photoId={photoId} />
+
                 </div>
             </div>
         </>
