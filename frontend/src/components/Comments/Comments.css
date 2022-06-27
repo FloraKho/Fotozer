@@ -1,0 +1,54 @@
+.pd-3-left {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+}
+
+.pd-3-form {
+    display: flex;
+    justify-content: center;
+    margin-left: 130px;
+}
+
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-form-textarea {
+    width: 440px;
+    height: 100px;
+    resize: none;
+    overflow-x: none;
+    /* cursor: pointer; */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: solid 1.5px #4895ef;
+    border-radius: 5px;
+}
+
+.user-avatar {
+    margin-right: 10px;
+}
+
+.avatar-2 {
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+
+.pd-3-comment {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pd-3-comment-btn {
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+}

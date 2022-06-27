@@ -94,7 +94,6 @@ function PhotoDetailPage() {
                         <div className='pd-2-photo-edit'>
                             <div className='user-avatar'>
                                 <img className='avatar' src='../photos/user-2.png' alt='user_photo' />
-
                             </div>
                             <div>
 
@@ -153,7 +152,9 @@ function PhotoDetailPage() {
                 </div>
                 <div className='pd-3'>
                     <Comments photoId={photoId} />
-
+                    <div className='pd-3-right'>
+                        <p>I am albums!</p>
+                    </div>
                 </div>
             </div>
         </>
