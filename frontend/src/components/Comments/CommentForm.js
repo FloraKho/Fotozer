@@ -59,7 +59,7 @@ function CommentForm({ sessionUser, photoId }) {
                 </button> */}
                 <div className='pd-3-comment'>
                 <button className='pd-3-comment-btn' type="submit" disabled={!!errors.length && !content?.length}>
-                    Comment
+                    Comment!!!!!
                 </button>
                 </div>
 
