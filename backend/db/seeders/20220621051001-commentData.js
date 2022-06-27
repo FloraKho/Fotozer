@@ -14,110 +14,162 @@ module.exports = {
     */
     return queryInterface.bulkInsert('Comments', [
       {
-        content: 'A dramatic scene, wonderful perspective from the drone',
-        userId: 1,
-        photoId: 2
+        content: 'A dramatic scene, wonderful perspective from the drone!!!!!!',
+        userId: 2,
+        photoId: 1
       },
       {
         content: 'A dramatic scene, wonderful perspective from the drone',
-        userId: 2,
+        userId: 3,
         photoId: 2
       },
       {
         content: 'Truly amazing image',
-        userId: 3,
-        photoId: 1
+        userId: 4,
+        photoId: 3
       },
       {
         content: 'Fantastique paysage',
-        userId: 1,
-        photoId: 1
+        userId: 5,
+        photoId: 4
       },
       {
         content: 'What an exotic shot. Congratulations.',
-        userId: 2,
-        photoId: 1
+        userId: 1,
+        photoId: 5
       },
       {
         content: 'Beautiful work...',
         userId: 5,
-        photoId: 1
+        photoId: 6
       },
       {
         content: 'Excellent shot. Congratulations on Explore! ',
-        userId: 2,
-        photoId: 3
+        userId: 4,
+        photoId: 7
       },
       {
         content: 'A fantastic scenery, excellent photograph! ',
         userId: 2,
-        photoId: 4
+        photoId: 8
       },
       {
         content: 'masterful! ',
         userId: 3,
-        photoId: 4
-      },
-      {
-        content: 'So beautiful. The colors, the lighting,elements. Stunning capture.',
-        userId: 3,
-        photoId: 5
-      },
-      {
-        content: 'Wonderful capture !!',
-        userId: 2,
-        photoId: 6
-      },
-      {
-        content: 'This is an excellent addition to Explore',
-        userId: 2,
-        photoId: 7
-      },
-      {
-        content: 'One of my favorite Explored pictures of today!',
-        userId: 1,
-        photoId: 8
-      },
-      {
-        content: 'Lovely!',
-        userId: 1,
         photoId: 9
       },
       {
-        content: 'Remember that a photo is not taken but rather “allowed to happen”',
+        content: 'So beautiful. The colors, the lighting,elements. Stunning capture.',
         userId: 1,
         photoId: 10
       },
       {
-        content: "Capture life's moments candidly",
-        userId: 1,
+        content: 'Wonderful capture !!',
+        userId: 3,
         photoId: 11
       },
       {
-        content: "Nothing is more precious than a captured moment",
-        userId: 1,
+        content: 'This is an excellent addition to Explore',
+        userId: 4,
         photoId: 12
       },
       {
-        content: "Capture the raw beauty of nature!",
+        content: 'One of my favorite Explored pictures of today!',
         userId: 1,
         photoId: 13
       },
       {
-        content: "Excellent work! Superb photo! ",
+        content: 'Lovely!',
+        userId: 1,
+        photoId: 14
+      },
+      {
+        content: 'Remember that a photo is not taken but rather “allowed to happen”',
         userId: 2,
-        photoId: 13
+        photoId: 15
+      },
+      {
+        content: "Capture life's moments candidly",
+        userId: 2,
+        photoId: 16
+      },
+      {
+        content: "Nothing is more precious than a captured moment",
+        userId: 3,
+        photoId: 17
+      },
+      {
+        content: "Capture the raw beauty of nature!",
+        userId: 5,
+        photoId: 18
+      },
+      {
+        content: "Excellent work! Superb photo! ",
+        userId: 4,
+        photoId: 18
       },
       {
         content: "Wow! Brilliantly captured and wishing you a wonderful day ",
         userId: 2,
-        photoId: 14
+        photoId: 17
       },
       {
         content: "So Very Beautiful !!! ",
+        userId: 3,
+        photoId: 17
+      },
+      {
+        content: "Nice picture.....",
         userId: 5,
+        photoId: 16
+      },
+      {
+        content: "incredible!",
+        userId: 1,
         photoId: 15
       },
+      {
+        content: "very nice work!",
+        userId: 3,
+        photoId: 14
+      },
+      {
+        content: "Stunning!",
+        userId: 2,
+        photoId: 13
+      },
+      {
+        content: "Gorgeous scenery, beautiful!",
+        userId: 5,
+        photoId: 12
+      }, 
+      {
+        content: "Excellent shot!",
+        userId: 1,
+        photoId: 11
+      },
+      {
+        content: "peace",
+        userId: 4,
+        photoId: 10
+      },
+      {
+        content: "Preciosa captura",
+        userId: 5,
+        photoId: 9
+      },
+      {
+        content: "Nice captura!",
+        userId: 3,
+        photoId: 8
+      },
+      {
+        content: "Wonderful mood",
+        userId: 1,
+        photoId: 7
+      }
+
+      
 
     ], {});
   },

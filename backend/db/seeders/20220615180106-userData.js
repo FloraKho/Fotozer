@@ -11,29 +11,24 @@ module.exports = {
       },
       {
         email: 'cupertino@gmail.com',
-        username: 'cupertino',
+        username: 'Cupertino',
         hashedPassword: bcrypt.hashSync('cupertino')
       },
       {
         email: 'santaclara@gmail.com',
-        username: 'santaclara',
+        username: 'Santa Clara',
         hashedPassword: bcrypt.hashSync('santaclara')
       },
       {
         email: 'sunnyvale@gmail.com',
-        username: 'sunnyvale',
+        username: 'Sunnyvale',
         hashedPassword: bcrypt.hashSync('santaclara')
       },
       {
-        email: 'sanjose@gmail.com',
-        username: 'sanjose',
-        hashedPassword: bcrypt.hashSync('sanjose')
+        email: 'washington@gmail.com',
+        username: 'Washington',
+        hashedPassword: bcrypt.hashSync('washington')
       },
-      {
-        email: 'fremont@gmail.com',
-        username: 'fremont',
-        hashedPassword: bcrypt.hashSync('fremont')
-      }
     ], {});
   },
 
