@@ -14,12 +14,12 @@ module.exports = {
     */
     return queryInterface.bulkInsert('Comments', [
       {
-        content: 'A dramatic scene, wonderful perspective from the drone!!!!!!',
+        content: 'a dramatic scene',
         userId: 2,
         photoId: 1
       },
       {
-        content: 'A dramatic scene, wonderful perspective from the drone',
+        content: 'wonderful catch',
         userId: 3,
         photoId: 2
       },
@@ -44,7 +44,7 @@ module.exports = {
         photoId: 6
       },
       {
-        content: 'Excellent shot. Congratulations on Explore! ',
+        content: 'Excellent shot! ',
         userId: 4,
         photoId: 7
       },
@@ -59,7 +59,7 @@ module.exports = {
         photoId: 9
       },
       {
-        content: 'So beautiful. The colors, the lighting,elements. Stunning capture.',
+        content: 'So beautiful. Stunning capture.',
         userId: 1,
         photoId: 10
       },
