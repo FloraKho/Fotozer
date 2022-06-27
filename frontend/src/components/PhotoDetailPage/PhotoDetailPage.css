@@ -154,7 +154,9 @@
 }
 
 .pd-2-left,
-.pd-2-right {
+.pd-2-right,
+.pd-3-left,
+.pd-3-right {
     float: left;
     width: 50%;
     margin: 30px 20px;
@@ -163,8 +165,10 @@
 
 @media screen and (max-width: 600px) {
 
-    .pd-left,
-    .pd-2-right {
+    .pd-2-left,
+    .pd-2-right,
+    .pd-3-left,
+    .pd-3-right {
         width: 100%;
     }
 }
@@ -239,4 +243,12 @@
 .pd-2-date {
     display: flex;
     justify-content: center;
+}
+
+/* third part */
+
+.pd-3 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }

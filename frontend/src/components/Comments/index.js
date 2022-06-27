@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { readComments } from '../../store/comments';
 import CommentForm from './CommentForm';
 import CommentDisplay from './CommentDisplay';
+import './Comments.css';
 
 
 function Comments({photoId}){
@@ -22,7 +23,7 @@ function Comments({photoId}){
     if(!commentsArr.length) return null;
 
     return (
-        <div className='comments-part'>
+        <div className='pd-3-left'>
             <CommentForm sessionUser={sessionUser} photoId={photoId} />
             <div className="comments-container">
                 {commentsArr.map((comment) => (

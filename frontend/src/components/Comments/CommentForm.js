@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { createComment } from '../../store/comments';
+import './Comments.css';
 
 function CommentForm({ sessionUser, photoId }) {
 
@@ -41,11 +42,12 @@ function CommentForm({ sessionUser, photoId }) {
 
     return (
         <>
-            {/* <div className="comment-image-container">
-                <img src='../../photos/camera-2.png' alt='comment-logo' />
-            </div> */}
-            <div className='comment-form'>
-            <form onSubmit={handleCreate}>
+            <div className='pd-3-form'>
+                <div clasName='user-avatar-2'>
+                    <img className='avatar-2' src='../photos/user-3.png' alt='user_photo' />
+                </div>
+            
+            <form className='comment-form' onSubmit={handleCreate}>
                 <textarea
                     className="comment-form-textarea"
                     value={content}
@@ -55,10 +57,11 @@ function CommentForm({ sessionUser, photoId }) {
                 {/* <button onClick={handleCancelSubmit}>
                     Cancel
                 </button> */}
-
-                <button type="submit" disabled={!!errors.length && !content?.length}>
+                <div className='pd-3-comment'>
+                <button className='pd-3-comment-btn' type="submit" disabled={!!errors.length && !content?.length}>
                     Comment
                 </button>
+                </div>
 
             </form>
             </div>
