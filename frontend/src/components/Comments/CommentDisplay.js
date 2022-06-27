@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { updateComment } from "../../store/comments";
+import DeleteComment from "./DeleteComment";
 
 function CommentDisplay({ comment, sessionUser, photoId }) {
 
@@ -47,56 +48,61 @@ function CommentDisplay({ comment, sessionUser, photoId }) {
 
     return (
         <>
-            <div className="comment">
+            <div className="pd-3-display">
                 <div className="user-avatar">
-                    <img className='avatar' src='../photos/user-3.png' alt='user_logo' />
+                    <img className='avatar-2' src='../photos/user-3.png' alt='user_logo' />
                 </div>
-                <div className='comment-right'>
-                    <div className='comment-content-1'>
-                        <div className='username'>{comment?.User?.username}</div>
-                        <div>{date}</div>
+                <div className='pd-3-display-comment'>
+                    <div className='comment-1'>
+                        <div className='comment-1-name-date'>
+                            <div className='comment-1-name'>{comment?.User?.username}</div>
+                            <div className='comment-1-date'>{date}</div>
+                        </div>
                         <div className='comment-button'>
                             {
                                 sessionUser.id === comment.userId ? (
                                     <>
-                                        <div className='comment-edit' onClick={handleEditState}>edit</div>
+                                        <div className='comment-edit' onClick={handleEditState}><i className="fa-solid fa-pen-to-square comment-edit"></i></div>
+                                        <DeleteComment commentId={comment?.id} photoId={photoId} />
                                     </>
                                 ) : ''
                             }
 
                         </div>
-                        <div className='comment-content-2'>
-                            {sessionUser.id === comment.userId && edit ? (
-                                <form onSubmit={handleEditSubmit}>
-                                    <div className="errors">
-                                        <ul>
-                                            {errors.map(error => (
-                                                <li key={error}>{error}</li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <textarea
-                                            type='text'
-                                            value={content}
-                                            onChange={e => setContent(e.target.value)}
-                                            placeholder='Add a comment'
-
-                                        />
-                                        <button type='submit' disabled={!!errors.length}>Save</button>
-                                    </div>
-                                </form>
-                            ) : (
+                    </div>
+                    <div className='comment-2'>
+                        {sessionUser.id === comment.userId && edit ? (
+                            <form onSubmit={handleEditSubmit}>
+                                <div className="errors">
+                                    <ul>
+                                        {errors.map(error => (
+                                            <li key={error}>{error}</li>
+                                        ))}
+                                    </ul>
+                                </div>
                                 <div>
-                                    {/* <div onClick={handleEditState}> */}
-                                    <div>
-                                        <p>{currentContent}</p>
+                                    <textarea
+                                        className='comment-form-edit'
+                                        type='text'
+                                        value={content}
+                                        onChange={e => setContent(e.target.value)}
+                                        placeholder='Add a comment'
+
+                                    />
+                                    <div className='comment-form-edit-btn'>
+                                        <button type='submit' disabled={!!errors.length || !content.length}>Save</button>
                                     </div>
                                 </div>
-                            )}
-                        </div>
+                            </form>
+                        ) : (
+                            <div className='comment-2-content-display'>
+                                {/* <div onClick={handleEditState}> */}
+                                <p className='comment-2-content'>{currentContent}</p>
+                            </div>
+                        )}
                     </div>
                 </div>
+
             </div>
         </>
     )

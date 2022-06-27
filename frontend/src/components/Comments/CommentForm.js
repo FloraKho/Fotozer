@@ -43,7 +43,7 @@ function CommentForm({ sessionUser, photoId }) {
     return (
         <>
             <div className='pd-3-form'>
-                <div clasName='user-avatar-2'>
+                <div className='user-avatar-2'>
                     <img className='avatar-2' src='../photos/user-3.png' alt='user_photo' />
                 </div>
             
