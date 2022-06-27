@@ -7,7 +7,7 @@ const router = express.Router();
 //read all photos
 router.get('/', asyncHandler(async (req, res) => {
     const images = await Photo.findAll({
-        order: [['updatedAt', 'DESC']],
+        order: [['createdAt', 'DESC']],
         include: User
     })
     return res.json(images);
