@@ -164,7 +164,6 @@
 
 
 @media screen and (max-width: 600px) {
-
     .pd-2-left,
     .pd-2-right,
     .pd-3-left,
@@ -251,4 +250,5 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    margin-bottom: 50px;
 }
