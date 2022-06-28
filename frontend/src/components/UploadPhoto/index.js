@@ -84,7 +84,7 @@ function UploadPage() {
         <div className='upload-page'>
             <div className='up-center'>
                 <div>
-                    <button className='up-back-btn' onClick={() => history.goBack()}><i className="fa-solid fa-circle-arrow-left"></i> Back</button>
+                    <button className='up-back-btn' onClick={() => history.goBack()}><i className="fa-solid fa-circle-arrow-left"></i>Back</button>
                 </div>
                 <div className='up-info'>
                     <h2>Upload your image</h2>
