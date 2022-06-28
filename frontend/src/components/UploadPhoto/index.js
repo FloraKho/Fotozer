@@ -16,24 +16,25 @@ function UploadPage() {
     // const [isPreviewAvailable, setIsPreviewAvailable] = useState(false);
     const [title, setTitle] = useState('');
     const [description, setDiscription] = useState('');
-    const [imgURL, setImgURL] = useState('');
+    // const [imgURL, setImgURL] = useState('');
+    const [image, setImage] = useState(null);
 
 
     useEffect(() => {
         const errors = [];
-        function isValidURL(str) {
-            var pattern = new RegExp('^(https?:\\/\\/)?' +
-                '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' +
-                '((\\d{1,3}\\.){3}\\d{1,3}))' +
-                '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' +
-                '(\\?[;&a-z\\d%_.~+=-]*)?' +
-                '(\\#[-a-z\\d_]*)?$', 'i');
-            return !!pattern.test(str);
-        }
+        // function isValidURL(str) {
+        //     var pattern = new RegExp('^(https?:\\/\\/)?' +
+        //         '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' +
+        //         '((\\d{1,3}\\.){3}\\d{1,3}))' +
+        //         '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' +
+        //         '(\\?[;&a-z\\d%_.~+=-]*)?' +
+        //         '(\\#[-a-z\\d_]*)?$', 'i');
+        //     return !!pattern.test(str);
+        // }
         
-        if (!isValidURL(imgURL)) {
-            errors.push("Please enter a valid image url");
-        }
+        // if (!isValidURL(imgURL)) {
+        //     errors.push("Please enter a valid image url");
+        // }
 
         if (title.length > 50) {
             errors.push("Title must be within 50 characters");
@@ -42,21 +43,22 @@ function UploadPage() {
             errors.push("Please enter a title");
         }
         setErrors(errors);
-    }, [title, description, imgURL])
+    // }, [title, description, imgURL])
+}, [title, description])
 
     const handleOnSubmit = async (e) => {
         e.preventDefault();
         const photoInfo = {
-            title,
-            description,
-            imgURL,
+            title: title,
+            description: description,
+            imgURL: image,
             userId: userId
         }
         const photo = await dispatch(uploadPhoto(photoInfo));
         setErrors([]);
         setTitle('');
         setDiscription('');
-        setImgURL('');
+        setImage(null);
         history.push(`/photos/${photo.id}`);
     }
 
@@ -64,7 +66,12 @@ function UploadPage() {
         e.preventDefault();
         setTitle('');
         setDiscription('');
-        setImgURL('');
+        setImage(null);
+    }
+
+    const updateFile = (e) => {
+        const file = e.target.files[0];
+        if(file) setImage(file);
     }
 
     return (
@@ -92,8 +99,9 @@ function UploadPage() {
                             <span>Enter description</span>
                         </label>
                         <label>
-                            <textarea required type='text' placeholder='' value={imgURL} onChange={(e) => setImgURL(e.target.value)} />
-                            <span>Enter Image URL</span>
+                            {/* <textarea required type='text' placeholder='' value={imgURL} onChange={(e) => setImgURL(e.target.value)} />
+                            <span>Enter Image URL</span> */}
+                            <input type='file' onChange={updateFile}/>
                         </label>
                     </div>
                     {/* {previewSrc ? (

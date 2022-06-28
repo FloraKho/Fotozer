@@ -45,21 +45,49 @@ const deletePhoto = (photoId) => {
 
 //thunk
 //create
+
 export const uploadPhoto = (photo) => async (dispatch) => {
+    const { image, title, description } = photo;
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('description', description);
+
+
+    if(image) formData.append('image', image);
+
     const response = await csrfFetch(`/api/photos`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "multipart/form-data",
         },
-        body: JSON.stringify(photo),
+        body: formData,
     });
-
     if (response.ok) {
         const newPhoto = await response.json();
         dispatch(addPhoto(newPhoto));
         return newPhoto;
     }
 }
+
+
+
+// export const uploadPhoto = (photo) => async (dispatch) => {
+//     const response = await csrfFetch(`/api/photos`, {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(photo),
+//     });
+
+//     if (response.ok) {
+//         const newPhoto = await response.json();
+//         dispatch(addPhoto(newPhoto));
+//         return newPhoto;
+//     }
+// }
+
+
 
 //read
 export const readPhoto = (photoId) => async (dispatch) => {

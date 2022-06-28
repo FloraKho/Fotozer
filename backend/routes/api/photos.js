@@ -7,9 +7,14 @@ const { Photo, Comment, User } = require('../../db/models');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 
+const {
+    singleMulterUpload,
+    singlePublicFileUpload,
+} = require("../../awsS3");
+
 const router = express.Router();
 
-const validateLogin = [
+const validatePhotoInfo = [
     check('title')
         .notEmpty()
         .withMessage('Please provide a title.'),
@@ -21,10 +26,12 @@ const validateLogin = [
 
 
 //upload photo
-router.post('/', requireAuth, asyncHandler(async (req, res) => {
+router.post('/', singleMulterUpload('image'), requireAuth, asyncHandler(async (req, res) => {
 
-    const { title, description, imgURL } = req.body;
+    const { title, description } = req.body;
+    const imgURL = await singlePublicFileUpload(req.file);
     const userId = req.user.id;
+
     const newPhoto = await Photo.create({
         title: title,
         description: description,
