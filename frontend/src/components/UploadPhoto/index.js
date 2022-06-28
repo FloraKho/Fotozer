@@ -49,10 +49,10 @@ function UploadPage() {
     const handleOnSubmit = async (e) => {
         e.preventDefault();
         const photoInfo = {
-            title: title,
-            description: description,
-            imgURL: image,
-            userId: userId
+            title,
+            description,
+            image,
+            userId
         }
         const photo = await dispatch(uploadPhoto(photoInfo));
         setErrors([]);
