@@ -28,7 +28,7 @@
 .myphoto-display {
     margin: 20px 5px;
     position: relative;
-    cursor: pointer;
+    cursor: zoom-in;
 }
 
 .myphoto-display img {
@@ -45,5 +45,6 @@
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
     transform: scale(1.2);
-    transition: 1s ease;
+    transition: 2s ease;
 }
+
