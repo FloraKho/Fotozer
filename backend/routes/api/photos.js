@@ -28,9 +28,9 @@ const validatePhotoInfo = [
 //upload photo
 router.post('/', singleMulterUpload('image'), requireAuth, asyncHandler(async (req, res) => {
 
-    const { title, description } = req.body;
+    const { title, description, userId } = req.body;
+    // const userId = req.user.id;
     const imgURL = await singlePublicFileUpload(req.file);
-    const userId = req.user.id;
 
     const newPhoto = await Photo.create({
         title: title,
@@ -38,6 +38,7 @@ router.post('/', singleMulterUpload('image'), requireAuth, asyncHandler(async (r
         imgURL: imgURL,
         userId: userId
     })
+
     return res.json(newPhoto);
 }))
 

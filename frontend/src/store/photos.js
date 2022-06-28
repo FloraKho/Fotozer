@@ -52,7 +52,6 @@ export const uploadPhoto = (photo) => async (dispatch) => {
     formData.append('title', title);
     formData.append('description', description);
 
-
     if(image) formData.append('image', image);
 
     const response = await csrfFetch(`/api/photos`, {
