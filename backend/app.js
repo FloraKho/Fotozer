@@ -19,11 +19,12 @@ const app = express();
 app.use(morgan('dev'));
 
 app.use(cookieParser());
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 //to avoid entity. parse failed
-app.use(require('body-parser').json());
-app.use(require('body-parser').urlencoded({ extended: true }));
+// app.use(require('body-parser').json());
+// app.use(require('body-parser').urlencoded({ extended: true }));
 
 // Security Middleware
 if (!isProduction) {

@@ -17,7 +17,7 @@ module.exports = {
       },
       imgURL: {
         allowNull: false,
-        type: Sequelize.TEXT
+        type: Sequelize.STRING
       },
       userId: {
         allowNull: false,

@@ -12,51 +12,58 @@ function UploadPage() {
     const userId = useSelector((state) => state.session.user?.id);
 
     const [errors, setErrors] = useState([]);
-    // const [previewSrc, setPreviewSrc] = useState('')
-    // const [isPreviewAvailable, setIsPreviewAvailable] = useState(false);
     const [title, setTitle] = useState('');
     const [description, setDiscription] = useState('');
-    const [imgURL, setImgURL] = useState('');
+    // const [imgURL, setImgURL] = useState('');
+    const [image, setImage] = useState(null);
 
 
     useEffect(() => {
         const errors = [];
-        function isValidURL(str) {
-            var pattern = new RegExp('^(https?:\\/\\/)?' +
-                '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' +
-                '((\\d{1,3}\\.){3}\\d{1,3}))' +
-                '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' +
-                '(\\?[;&a-z\\d%_.~+=-]*)?' +
-                '(\\#[-a-z\\d_]*)?$', 'i');
-            return !!pattern.test(str);
-        }
-        
-        if (!isValidURL(imgURL)) {
-            errors.push("Please enter a valid image url");
+        // function isValidURL(str) {
+        //     var pattern = new RegExp('^(https?:\\/\\/)?' +
+        //         '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' +
+        //         '((\\d{1,3}\\.){3}\\d{1,3}))' +
+        //         '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' +
+        //         '(\\?[;&a-z\\d%_.~+=-]*)?' +
+        //         '(\\#[-a-z\\d_]*)?$', 'i');
+        //     return !!pattern.test(str);
+        // }
+
+        // if (!isValidURL(imgURL)) {
+        //     errors.push("Please enter a valid image url");
+        // }
+        if (!image) {
+            errors.push("Please choose an image file");
         }
 
         if (title.length > 50) {
             errors.push("Title must be within 50 characters");
-        } 
-        else if (!title.length){
+        }
+        else if (!title.length) {
             errors.push("Please enter a title");
         }
         setErrors(errors);
-    }, [title, description, imgURL])
+        // }, [title, description, imgURL])
+    }, [title, description, image]);
+
+    useEffect(() => {
+        history.push(`/photos/upload`);
+    }, [history]);
 
     const handleOnSubmit = async (e) => {
         e.preventDefault();
         const photoInfo = {
             title,
             description,
-            imgURL,
-            userId: userId
+            image,
+            userId
         }
         const photo = await dispatch(uploadPhoto(photoInfo));
         setErrors([]);
         setTitle('');
         setDiscription('');
-        setImgURL('');
+        setImage(null);
         history.push(`/photos/${photo.id}`);
     }
 
@@ -64,61 +71,67 @@ function UploadPage() {
         e.preventDefault();
         setTitle('');
         setDiscription('');
-        setImgURL('');
+        setImage(null);
+    }
+
+    const updateFile = (e) => {
+        const file = e.target.files[0];
+        if (file) setImage(file);
     }
 
     return (
-        <div className='uploadImg-page'>
-            <div className='uploadImg-center'>
-                <div className='back-to-user-photostream'>
-                    <button onClick={() => history.goBack()}><i className="fa-solid fa-circle-arrow-left"></i> Back</button>
+  
+        <div className='upload-page'>
+            <div className='up-center'>
+                <div>
+                    <button className='up-back-btn' onClick={() => history.goBack()}><i className="fa-solid fa-circle-arrow-left"></i>Back</button>
                 </div>
-                <div className="errors">
-                    <ul>
-                        {errors.map(error => (
-                            <li key={error}>{error}</li>
-                        ))}
-                    </ul>
-                </div>
-                <form className='upload-form' onSubmit={handleOnSubmit}>
-
-                    <div className='form-input'>
-                        <label>
-                            <input type="text" placeholder="" value={title} onChange={e => setTitle(e.target.value)} />
-                            <span className="placeholder">Enter Title</span>
-                        </label>
-                        <label>
-                            <textarea type='text' placeholder='' value={description} onChange={e => setDiscription(e.target.value)} />
-                            <span>Enter description</span>
-                        </label>
-                        <label>
-                            <textarea required type='text' placeholder='' value={imgURL} onChange={(e) => setImgURL(e.target.value)} />
-                            <span>Enter Image URL</span>
-                        </label>
+                <div className='up-info'>
+                    <h2>Upload your image</h2>
+                    <div className="up-errors">
+                        <ul>
+                            {errors.map(error => (
+                                <li key={error}><i className="fa-solid fa-triangle-exclamation"></i> {error}</li>
+                            ))}
+                        </ul>
                     </div>
-                    {/* {previewSrc ? (
-                        isPreviewAvailable ? (
-                            <div className="image-preview">
-                                <img className="preview-image" src={previewSrc} alt="Preview" />
-                            </div>
-                        ) : (
-                            <div className="preview-message">
-                                <p>No preview available for this file</p>
-                            </div>
-                        )
-                    ) : (
-                        <div className="preview-message">
-                            <p>Image preview will be shown here after selection</p>
+                    <form className='upload-form' onSubmit={handleOnSubmit}>
+                        <div className='up-form-input'>
+                            <label>
+                               
+                                <input className='up-form-title-input' type="text" value={title} placeholder='Enter a title' onChange={e => setTitle(e.target.value)} />
+
+                            </label>
+                            <label>
+                                <textarea type='text' placeholder='Add a description' className='up-form-description' value={description} onChange={e => setDiscription(e.target.value)} />
+                            </label>
+                            <div className='box'>
+                            {/* <label htmlFor="upload-input">
+                                <img
+                                    src='../photos/folder.png'
+                                    draggable={"false"}
+                                    alt="placeholder"
+                                    style={{ width: 100, height: 100 }}
+                                />
+                                <p style={{ color: "#444" }}>Click to upload image</p>
+                            </label> */}
+                                {/* <textarea required type='text' placeholder='' value={imgURL} onChange={(e) => setImgURL(e.target.value)} />
+                            <span>Enter Image URL</span> */}
+                                <input type='file' onChange={updateFile} accept="image/png, image/jpeg" />
+                          </div>
+                      
                         </div>
-                    )} */}
-                    <div className='uploadImg-button'></div>
-                    <button variant="primary" type="submit" disabled={!!errors.length}>
-                        Submit
+                   
+                        <button className='up-upload-button' variant="primary" type="submit" disabled={!!errors.length}>
+                            Submit
+                        </button>
+                    </form>
+                    <div className='up-cancel'>
+                    <button className='up-cancel-button' onClick={handleCancelSubmit}>
+                        Cancel
                     </button>
-                </form>
-                <button onClick={handleCancelSubmit}>
-                    Cancel
-                </button>
+                    </div>
+                </div>
             </div>
         </div>
 

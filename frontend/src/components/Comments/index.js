@@ -20,12 +20,12 @@ function Comments({photoId}){
     }, [dispatch, photoId]);
 
 
-    if(!commentsArr.length) return null;
+    // if(!commentsArr.length) return null;
 
     return (
         <div className='pd-3-left'>
             <CommentForm sessionUser={sessionUser} photoId={photoId} />
-            <div className="comments-container">
+            {commentsArr && (<div className="comments-container">
                 {commentsArr.map((comment) => (
                     <CommentDisplay
                         key={comment.id}
@@ -34,7 +34,7 @@ function Comments({photoId}){
                         photoId={photoId}
                     />
                 ))}
-            </div>
+            </div>)}
         </div>
     )
 }
