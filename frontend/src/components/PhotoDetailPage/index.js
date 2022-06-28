@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
-import { readPhoto, updatePhoto } from '../../store/photos';
+import { readAllPhotos, updatePhoto } from '../../store/photos';
 import DeletePhoto from './DeletePhoto';
 import Comments from '../Comments';
 import Count from './Count';
@@ -32,8 +32,8 @@ function PhotoDetailPage() {
     }, [history, photoId]);
 
     useEffect(() => {
-        dispatch(readPhoto(photoId));
-    }, [dispatch, photoId]);
+        dispatch(readAllPhotos(sessionUser?.id));
+    }, [dispatch, sessionUser.id]);
 
     useEffect(() => {
         const errors = [];

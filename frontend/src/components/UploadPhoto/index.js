@@ -12,8 +12,6 @@ function UploadPage() {
     const userId = useSelector((state) => state.session.user?.id);
 
     const [errors, setErrors] = useState([]);
-    // const [previewSrc, setPreviewSrc] = useState('')
-    // const [isPreviewAvailable, setIsPreviewAvailable] = useState(false);
     const [title, setTitle] = useState('');
     const [description, setDiscription] = useState('');
     // const [imgURL, setImgURL] = useState('');
@@ -35,6 +33,9 @@ function UploadPage() {
         // if (!isValidURL(imgURL)) {
         //     errors.push("Please enter a valid image url");
         // }
+        if(!image) {
+            errors.push("Please choose a file");
+        }
 
         if (title.length > 50) {
             errors.push("Title must be within 50 characters");
@@ -44,7 +45,7 @@ function UploadPage() {
         }
         setErrors(errors);
     // }, [title, description, imgURL])
-}, [title, description])
+}, [title, description, image])
 
     const handleOnSubmit = async (e) => {
         e.preventDefault();
@@ -75,8 +76,8 @@ function UploadPage() {
     }
 
     return (
-        <div className='uploadImg-page'>
-            <div className='uploadImg-center'>
+        <div className='upload-page'>
+            <div className='up-center'>
                 <div className='back-to-user-photostream'>
                     <button onClick={() => history.goBack()}><i className="fa-solid fa-circle-arrow-left"></i> Back</button>
                 </div>
@@ -88,7 +89,6 @@ function UploadPage() {
                     </ul>
                 </div>
                 <form className='upload-form' onSubmit={handleOnSubmit}>
-
                     <div className='form-input'>
                         <label>
                             <input type="text" placeholder="" value={title} onChange={e => setTitle(e.target.value)} />
@@ -101,24 +101,9 @@ function UploadPage() {
                         <label>
                             {/* <textarea required type='text' placeholder='' value={imgURL} onChange={(e) => setImgURL(e.target.value)} />
                             <span>Enter Image URL</span> */}
-                            <input type='file' onChange={updateFile}/>
+                            <input type='file' onChange={updateFile} accept="image/png, image/jpeg" />
                         </label>
                     </div>
-                    {/* {previewSrc ? (
-                        isPreviewAvailable ? (
-                            <div className="image-preview">
-                                <img className="preview-image" src={previewSrc} alt="Preview" />
-                            </div>
-                        ) : (
-                            <div className="preview-message">
-                                <p>No preview available for this file</p>
-                            </div>
-                        )
-                    ) : (
-                        <div className="preview-message">
-                            <p>Image preview will be shown here after selection</p>
-                        </div>
-                    )} */}
                     <div className='uploadImg-button'></div>
                     <button variant="primary" type="submit" disabled={!!errors.length}>
                         Submit

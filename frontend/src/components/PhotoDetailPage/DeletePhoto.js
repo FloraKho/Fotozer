@@ -12,7 +12,7 @@ function DeletePhoto ({photo}) {
 
     const handleDeleteSubmit = async (e) => {
         e.preventDefault();
-        dispatch(removePhoto(photo.id))
+        await dispatch(removePhoto(photo.id));
         setShowModal(false);
         history.push(`/photostream`);
     }
