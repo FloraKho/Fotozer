@@ -14,7 +14,6 @@ function Photostream() {
     const userId = useSelector(state => state.session.user?.id);
     const sessionUser = useSelector(state => state.session.user);
 
-
     const photos = useSelector(state => state.photos);
     const photoArr = Object.values(photos).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
 

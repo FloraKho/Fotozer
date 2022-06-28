@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+
+.search {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('../../../public/photos/sea.jpg');
+    background-size: cover;
+    background-position: center;
+
+}
+
+.fa-magnifying-glass {
+    font-size: 32px;
+    display: grid;
+    place-items: center;
+
+}
+
+.search-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: none;
+}
+
+
+.search-input {
+    display: flex;
+    margin-top: 65px;
+    justify-content: center;
+    border-radius: 2px;
+    border: 2px solid #fefae0;
+    background-image: linear-gradient(174.2deg, rgba(255, 244, 228, 1) 7.1%, rgba(240, 246, 238, 1) 67.4%);
+}
+
+.search-input div {
+    margin: 0 10px;
+}
+
+.search-input input {
+    border: none;
+    font-size: 20px;
+    padding: 15px;
+    height: 60px;
+    width: 600px;
+}
+
+.search-input input:focus {
+    outline: none;
+}
+
+
+
+.search-info {
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
+    display: transparent;
+
+}
+
+.search-info p {
+    margin-left: 15px;
+    font-size: 18px;
+    font-family: 'Lato', sans-serif;
+}
+
+.search-result {
+    margin-top: 5px;
+    margin-left: -50px;
+    width: 500px;
+    max-height: 400px;
+    background-image: linear-gradient(174.2deg, rgba(255, 244, 228, 1) 7.1%, rgba(240, 246, 238, 1) 67.4%);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.search-info:hover {
+    background-color: #f8f9fa;
+}
+
+.search-clear {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #111414;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 25px;
+    padding: 0 5px;
+    position: relative;
+    text-align: center;
+    width: 100px;
+    margin: 15px 0;
+}
+
+.search-clear:hover {
+    background-color: #f7fafa;
+}
+
+.search h1 {
+    font-family: 'Kanit', sans-serif;
+    margin-top: 40px;
+    font-size: 44px;
+    color: #1d3557;
+}
