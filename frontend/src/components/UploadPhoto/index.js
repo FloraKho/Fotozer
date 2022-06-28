@@ -29,23 +29,23 @@ function UploadPage() {
         //         '(\\#[-a-z\\d_]*)?$', 'i');
         //     return !!pattern.test(str);
         // }
-        
+
         // if (!isValidURL(imgURL)) {
         //     errors.push("Please enter a valid image url");
         // }
-        if(!image) {
-            errors.push("Please choose a file");
+        if (!image) {
+            errors.push("Please choose an image file");
         }
 
         if (title.length > 50) {
             errors.push("Title must be within 50 characters");
-        } 
-        else if (!title.length){
+        }
+        else if (!title.length) {
             errors.push("Please enter a title");
         }
         setErrors(errors);
-    // }, [title, description, imgURL])
-}, [title, description, image])
+        // }, [title, description, imgURL])
+    }, [title, description, image])
 
     const handleOnSubmit = async (e) => {
         e.preventDefault();
@@ -72,7 +72,7 @@ function UploadPage() {
 
     const updateFile = (e) => {
         const file = e.target.files[0];
-        if(file) setImage(file);
+        if (file) setImage(file);
     }
 
     return (
@@ -81,37 +81,39 @@ function UploadPage() {
                 <div className='back-to-user-photostream'>
                     <button onClick={() => history.goBack()}><i className="fa-solid fa-circle-arrow-left"></i> Back</button>
                 </div>
-                <div className="errors">
-                    <ul>
-                        {errors.map(error => (
-                            <li key={error}>{error}</li>
-                        ))}
-                    </ul>
-                </div>
-                <form className='upload-form' onSubmit={handleOnSubmit}>
-                    <div className='form-input'>
-                        <label>
-                            <input type="text" placeholder="" value={title} onChange={e => setTitle(e.target.value)} />
-                            <span className="placeholder">Enter Title</span>
-                        </label>
-                        <label>
-                            <textarea type='text' placeholder='' value={description} onChange={e => setDiscription(e.target.value)} />
-                            <span>Enter description</span>
-                        </label>
-                        <label>
-                            {/* <textarea required type='text' placeholder='' value={imgURL} onChange={(e) => setImgURL(e.target.value)} />
-                            <span>Enter Image URL</span> */}
-                            <input type='file' onChange={updateFile} accept="image/png, image/jpeg" />
-                        </label>
+                <div className='up-info'>
+                    <div className="errors">
+                        <ul>
+                            {errors.map(error => (
+                                <li key={error}>{error}</li>
+                            ))}
+                        </ul>
                     </div>
-                    <div className='uploadImg-button'></div>
-                    <button variant="primary" type="submit" disabled={!!errors.length}>
-                        Submit
+                    <form className='upload-form' onSubmit={handleOnSubmit}>
+                        <div className='form-input'>
+                            <label>
+                                <input type="text" placeholder="" value={title} onChange={e => setTitle(e.target.value)} />
+                                <span className="placeholder">Enter Title</span>
+                            </label>
+                            <label>
+                                <textarea type='text' placeholder='' value={description} onChange={e => setDiscription(e.target.value)} />
+                                <span>Enter description</span>
+                            </label>
+                            <label>
+                                {/* <textarea required type='text' placeholder='' value={imgURL} onChange={(e) => setImgURL(e.target.value)} />
+                            <span>Enter Image URL</span> */}
+                                <input type='file' onChange={updateFile} accept="image/png, image/jpeg" />
+                            </label>
+                        </div>
+                        <div className='uploadImg-button'></div>
+                        <button variant="primary" type="submit" disabled={!!errors.length}>
+                            Submit
+                        </button>
+                    </form>
+                    <button onClick={handleCancelSubmit}>
+                        Cancel
                     </button>
-                </form>
-                <button onClick={handleCancelSubmit}>
-                    Cancel
-                </button>
+                </div>
             </div>
         </div>
 
