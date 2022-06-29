@@ -2,14 +2,17 @@ const router = require('express').Router();
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
 const photosRouter = require('./photos.js');
-const exploreRouter = require('./explore');
-const commentsRouter = require('./comments');
+const exploreRouter = require('./explore.js');
+const commentsRouter = require('./comments.js');
+const favoritesRouter = require('./favorites.js');
 
 router.use('/session', sessionRouter);
 router.use('/users', usersRouter);
 router.use('/photos', photosRouter);
 router.use('/explore', exploreRouter);
 router.use('/comments', commentsRouter);
+router.use('/favorites', favoritesRouter);
+
 
 
 

@@ -1,0 +1,61 @@
+.faves-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fill, minmax(300px));
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    column-gap: 30px;
+    row-gap: 20px;
+    padding: 20px 80px;
+}
+
+.faves-display {
+    position: relative;
+    cursor: pointer;
+}
+
+.faves-display img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.faves-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background: linear-gradient(0deg, rgba(0, 0, 0, .6) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.faves-display:hover .faves-overlay {
+    opacity: 1;
+}
+
+.faves-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.faves-title {
+    font-size: 18px;
+    width: auto;
+    font-family: 'Lato', sans-serif;
+}
+

@@ -104,14 +104,14 @@ input {
     margin: 15px;
 }
 
-.accountuser a {
+.signup-login-link {
     text-decoration: none;
     margin-right: 10px;
     padding: 0 10px;
     color: #764abc;
 }
 
-.accountuser a:hover {
+.signup-login-link:hover {
     color: rgb(65, 56, 56);
 }
 

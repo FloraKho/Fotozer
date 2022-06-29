@@ -2,7 +2,7 @@ const express = require('express');
 const asyncHandler = require('express-async-handler');
 
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { User, Photo } = require('../../db/models');
+const { User, Photo, Favorite } = require('../../db/models');
 
 //Validating Signup Request Body
 const { check } = require('express-validator');
@@ -59,5 +59,20 @@ router.get('/:userId/photos', asyncHandler(async (req, res) => {
     })
     return res.json(photos);
 }))
+
+//get user's faves
+
+router.get('/:userId/favorites', asyncHandler(async (req, res) => {
+    const { userId } = req.params;
+    const faves = await Favorite.findAll({
+        order: [['createdAt', 'DESC']],
+        where: {
+            userId: userId
+        },
+        include: [User, Photo]
+    })
+    return res.json(faves);
+}))
+
 
 module.exports = router;

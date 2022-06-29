@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'cascade', 
       hooks: true
     });
+    Photo.hasMany(models.Favorite, {
+      foreignKey: 'photoId',
+      onDelete: 'cascade',
+      hooks: true
+    })
   };
   return Photo;
 };
