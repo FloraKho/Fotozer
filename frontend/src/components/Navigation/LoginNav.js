@@ -33,8 +33,6 @@ function LoginNav() {
                             <li>
                                 <Link className='a' to='/search'>Search</Link>
                             </li>
-                       
-                            
                         </ul>
                     </div>
                     <div className='Navbar-right'>

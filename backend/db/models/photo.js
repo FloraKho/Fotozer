@@ -19,6 +19,20 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'cascade',
       hooks: true
     })
+    
+    const columnMapping = {
+      through: 'AlbumPhoto',
+      otherKey: 'albumId',
+      foreignKey: 'photoId'
+    }
+
+    Photo.belongsToMany(models.Album, columnMapping);
+
+    Photo.hasMany(models.AlbumPhoto, {
+      foreignKey: 'photoId',
+      onDelete: 'cascade',
+      hooks: true
+    })
   };
   return Photo;
 };

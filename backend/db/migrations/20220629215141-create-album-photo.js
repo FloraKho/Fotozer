@@ -1,17 +1,17 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Favorites', {
+    return queryInterface.createTable('AlbumPhotos', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userId: {
+      albumId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: { model: 'Users' }
+        references: { model: 'Albums' }
       },
       photoId: {
         allowNull: false,
@@ -31,6 +31,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Favorites');
+    return queryInterface.dropTable('AlbumPhotos');
   }
 };
