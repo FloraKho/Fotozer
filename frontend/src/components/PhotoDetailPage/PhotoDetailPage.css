@@ -252,3 +252,14 @@
     width: 100%;
     margin-bottom: 50px;
 }
+
+.fa-star {
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.fa-star:hover {
+    color: #ffccd5;
+}
+

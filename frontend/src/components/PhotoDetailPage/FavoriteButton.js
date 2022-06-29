@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { readUserFaves, createFave, removeFave } from '../../store/favorites';
+import './PhotoDetailPage.css';
+
 
 function FavoriteButton({ photoId, sessionUser }) {
 

@@ -69,7 +69,7 @@ router.get('/:userId/favorites', asyncHandler(async (req, res) => {
         where: {
             userId: userId
         },
-        include: User
+        include: [User, Photo]
     })
     return res.json(faves);
 }))

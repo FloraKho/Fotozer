@@ -48,7 +48,7 @@ function LandingPage() {
                     </p>
                     <button type='button' className='signup-button'>
                         <span></span>
-                        <a href='/signup'>Start Here</a>
+                        <Link to='/signup' className='signup-link'>Start Here</Link>
                     </button>
                 </div>
             </div>
