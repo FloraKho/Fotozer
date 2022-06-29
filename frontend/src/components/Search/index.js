@@ -42,7 +42,6 @@ function Search() {
         setSearchWords('');
     }
 
-
     return (
         <div className='search'>
             <h1>Searching...</h1>
