@@ -19,7 +19,7 @@ function Count({photoId}){
 
     useEffect(() => {
         dispatch(readPhotoFaves(photoId));
-    })
+    }, [dispatch, photoId]);
 
 
     return (
