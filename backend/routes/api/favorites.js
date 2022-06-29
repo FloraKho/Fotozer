@@ -16,13 +16,6 @@ router.post('/', requireAuth, restoreUser, asyncHandler(async (req, res) => {
     return res.json(newFave);
 }))
 
-//get all faves
-// router.get('/', asyncHandler(async (req, res) => {
-//     const faves = await Favorite.findAll({
-//         include: User
-//     })
-//     return res.json(faves);
-// }))
 
 //get photo's faves
 router.get('/photos/:photoId', asyncHandler(async (req, res) => {

@@ -3,7 +3,6 @@ import { csrfFetch } from "./csrf";
 const ADD_FAVE = 'favorites/ADD_FAVE';
 const GET_PHOTO_FAVES = 'favorites/GET_PHOTO_FAVES';
 const GET_USER_FAVES = 'favorites/GET_USER_FAVES';
-// const GET_ALL_FAVES = 'favorites/GET_ALL_FAVES';
 const DELETE_FAVE = 'favorites/DELETE_FAVE';
 
 //action creator
@@ -29,13 +28,6 @@ const getUserFaves = (favorites) => {
     }
 }
 
-
-// const getAllFaves = (favorites) => {
-//     return {
-//         type: GET_ALL_FAVES,
-//         favorites
-//     }
-// }
 
 const deleteFave = (favoriteId) => {
     return {
@@ -79,15 +71,6 @@ export const readPhotoFaves = (photoId) => async (dispatch) => {
         dispatch(getPhotoFaves(faves));
     }
 }
-
-// export const readAllFaves = () => async (dispatch) => {
-//     const response = await csrfFetch(`/api/favorites`);
-//     if(response.ok){
-//         const faves = await response.json();
-//         dispatch(getAllFaves(faves));
-//     }
-// }
-
 
 
 export const removeFave = (favoriteId) => async (dispatch) => {

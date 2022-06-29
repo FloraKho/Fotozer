@@ -18,7 +18,7 @@ function Favorites () {
 
     useEffect(() => {
         dispatch(readUserFaves(userId));
-    })
+    }, [dispatch, userId]);
 
     useEffect(() => {
         history.push('/favorites');
