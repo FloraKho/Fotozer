@@ -9,10 +9,10 @@ function MyNavigation() {
                 style={isActive => ({
                     color: isActive ? "#fff" : '#6c757d'
                 })}>Photostream</NavLink>
-            <NavLink to='/ablums' className={({ isActive }) => (isActive ? "active" : "inactive")}
+            {/* <NavLink to='/ablums' className={({ isActive }) => (isActive ? "active" : "inactive")}
                 style={isActive => ({
                     color: isActive ? "#fff" : '#6c757d'
-                })}>Albums</NavLink>
+                })}>Albums</NavLink> */}
             <NavLink to='/favorites' className={({ isActive }) => (isActive ? "active" : "inactive")}
                 style={isActive => ({
                     color: isActive ? "#fff" : '#6c757d'

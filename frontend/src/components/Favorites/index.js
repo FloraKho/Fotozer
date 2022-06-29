@@ -14,7 +14,7 @@ function Favorites() {
     const sessionUser = useSelector(state => state.session?.user);
     const userId = sessionUser?.id;
     const faves = useSelector(state => state.favorites);
-    const favesArr = Object.values(faves);
+    const favesArr = Object.values(faves).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
 
     useEffect(() => {
         if (userId) {
