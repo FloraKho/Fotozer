@@ -8,16 +8,18 @@ import './Favorites.css';
 
 
 
-function Favorites () {
+function Favorites() {
     const dispatch = useDispatch();
     const history = useHistory();
-    const sessionUser = useSelector(state => state.session.user);
+    const sessionUser = useSelector(state => state.session?.user);
     const userId = sessionUser?.id;
     const faves = useSelector(state => state.favorites);
     const favesArr = Object.values(faves);
 
     useEffect(() => {
-        dispatch(readUserFaves(userId));
+        if (userId) {
+            dispatch(readUserFaves(userId));
+        }
     }, [dispatch, userId]);
 
     useEffect(() => {
@@ -25,11 +27,12 @@ function Favorites () {
     }, [history]);
 
 
+
     return (
         <div>
-            <Banner sessionUser={sessionUser}/>
+            <Banner sessionUser={sessionUser} />
             <MyNavigation />
-            
+
             <div className='faves-gallery'>
                 {favesArr && favesArr.map((fave) => {
                     return (

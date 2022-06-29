@@ -14,7 +14,10 @@ function FavoriteButton({ photoId, sessionUser }) {
     const currentFave = favesArr.find((fave) => fave?.userId === +userId && fave?.photoId === +photoId);
     
     useEffect(() => {
-        dispatch(readUserFaves(userId));
+        if(userId){
+            dispatch(readUserFaves(userId));
+        }
+       
     }, [dispatch, userId]);
 
     const handleLike = async (e) => {
