@@ -1,31 +1,56 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { readPhotoFaves, createFave, removeFave } from '../../store/favorites';
+import { readUserFaves, createFave, removeFave } from '../../store/favorites';
 
-function FavoriteButton ({photoId, sessionUser}) {
+function FavoriteButton({ photoId, sessionUser }) {
 
     const dispatch = useDispatch();
     const userId = sessionUser?.id;
-    
+
     const faves = useSelector((state) => state.favorites);
-    console.log(faves);
+    const favesArr = Object.values(faves);
+    const currentFave = favesArr.find((fave) => fave?.userId === +userId && fave?.photoId === +photoId);
     
-    const [favStatus, setFavStatus] = useState(false);
-
     useEffect(() => {
-        dispatch(readPhotoFaves(photoId));
-    }, [dispatch, photoId]);
+        dispatch(readUserFaves(userId));
+    }, [dispatch, userId]);
 
+    const handleLike = async (e) => {
+        e.preventDefault();
+        const newFave = {
+            userId: userId,
+            photoId: photoId
+        }
+        await dispatch(createFave(newFave));
+    }
 
+    const handleUnlike = async (e) => {
+        e.preventDefault();
+        await dispatch(removeFave(currentFave.id));
+       
+    }
+
+ 
+    if (!currentFave) {
+        return (
+            <>
+            <div>
+                 <h2 onClick={handleLike}><i className="fa-regular fa-star"></i></h2>
+            </div>
+            </>
+        )
+    }
 
     return (
-        <div>
-            <i className="fa-solid fa-star"></i>
-        </div>
-
+        <>
+            <div>
+                <h2 onClick={handleUnlike}><i className="fa-solid fa-star"></i></h2>
+            </div>
+        </>
     )
 
 }
+
 
 
 export default FavoriteButton;

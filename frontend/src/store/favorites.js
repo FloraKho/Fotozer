@@ -91,7 +91,7 @@ export const readPhotoFaves = (photoId) => async (dispatch) => {
 
 
 export const removeFave = (favoriteId) => async (dispatch) => {
-    const response = await csrfFetch(`/api/comments/${favoriteId}`, {
+    const response = await csrfFetch(`/api/favorites/${favoriteId}`, {
         method: 'DELETE'
     });
     if (response.ok) {
@@ -106,17 +106,17 @@ const initialState = {};
 const favoriteReducer = (state = initialState, action) => {
     let newState;
     switch (action.type) {
-        // case ADD_FAVE: 
-        // return {
-        //     ...state,
-        //     [action.favorite.id]: action.favorite
-        // };
-        // case GET_USER_FAVES: 
-        //     newState = {};
-        //     action.favorites.forEach(favorite => {
-        //         newState[favorite.id] = action.favorite;
-        //     });
-        //     return newState;
+        case ADD_FAVE: 
+        return {
+            ...state,
+            [action.favorite.id]: action.favorite
+        };
+        case GET_USER_FAVES: 
+            newState = {};
+            action.favorites.forEach(favorite => {
+                newState[favorite.id] = favorite;
+            });
+            return newState;
         case GET_PHOTO_FAVES:
             newState = {};
             action.favorites.forEach(favorite => {
@@ -125,10 +125,10 @@ const favoriteReducer = (state = initialState, action) => {
 
             return newState;
 
-        // case DELETE_FAVE:
-        //     newState = { ...state }
-        //     delete newState[action.favoriteId];
-        //     return newState;
+        case DELETE_FAVE:
+            newState = { ...state }
+            delete newState[action.favoriteId];
+            return newState;
 
         default:
             return state;
