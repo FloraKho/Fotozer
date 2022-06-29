@@ -1,7 +1,7 @@
 const express = require('express')
 const asyncHandler = require('express-async-handler');
 const { requireAuth, restoreUser } = require('../../utils/auth');
-const { User } = require('../../db/models');
+const { User, Favorite } = require('../../db/models');
 
 const router = express.Router();
 
@@ -33,6 +33,7 @@ router.get('/photos/:photoId', asyncHandler(async (req, res) => {
         },
         include: User
     });
+
     return res.json(faves);
 }))
 

@@ -6,6 +6,7 @@ import DeletePhoto from './DeletePhoto';
 import Comments from '../Comments';
 import Count from './Count';
 import './PhotoDetailPage.css';
+import FavoriteButton from './FavoriteButton';
 
 
 function PhotoDetailPage() {
@@ -85,7 +86,7 @@ function PhotoDetailPage() {
                             <>
                                 <DeletePhoto photo={photo} />
                             </>
-                        ) : <p><i className="fa-regular fa-heart"></i> FAVORITE BUTTON HERE</p>}
+                        ) : <FavoriteButton photoId={photoId} sessionUser={sessionUser}/>}
                     </div>
                 </div>
 
