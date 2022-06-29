@@ -11,6 +11,7 @@ import ExplorePage from "./components/ExplorePage";
 import Photostream from "./components/Photostream";
 import Favorites from "./components/Favorites";
 import PhotoDetailPage from "./components/PhotoDetailPage";
+import Search from "./components/Search";
 
 
 
@@ -52,6 +53,10 @@ function App() {
         <Route path='/photos/:photoId'>
           <Navigation isLoaded={isLoaded} />
           <PhotoDetailPage />
+        </Route>
+        <Route path='/search'>
+          <Navigation isLoaded={isLoaded} />
+          <Search />
         </Route>
       </Switch>
     </>

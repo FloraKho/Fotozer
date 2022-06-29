@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import * as sessionActions from '../../store/session';
 import './Navigation.css';
 
+
 function LoginNav() {
 
     const dispatch = useDispatch();
@@ -29,6 +30,11 @@ function LoginNav() {
                             <li>
                                 <Link className='a' to='/explore'>Explore</Link>
                             </li>
+                            <li>
+                                <Link className='a' to='/search'>Search</Link>
+                            </li>
+                       
+                            
                         </ul>
                     </div>
                     <div className='Navbar-right'>
