@@ -12,6 +12,7 @@ import Photostream from "./components/Photostream";
 import Favorites from "./components/Favorites";
 import PhotoDetailPage from "./components/PhotoDetailPage";
 import Search from "./components/Search";
+import PageNotFound from "./components/PageNotFound";
 
 
 
@@ -57,6 +58,9 @@ function App() {
         <Route path='/search'>
           <Navigation isLoaded={isLoaded} />
           <Search />
+        </Route>
+        <Route>
+          <PageNotFound />
         </Route>
       </Switch>
     </>
