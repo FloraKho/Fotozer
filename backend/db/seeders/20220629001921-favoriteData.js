@@ -19,7 +19,7 @@ module.exports = {
       userId: 4,
       photoId: 2
     }, {
-      userId: 1,
+      userId: 4,
       photoId: 3
     }, {
       userId: 2,
