@@ -1,7 +1,7 @@
 
 # 📸 Fotozer 
 
-Fotozer is a website clone, inspired by [Flickr](https://www.flickr.com/). Fotozer can be used – and is best suited – for photo-sharing, photo organizing, and archiving. Community members can share views and fave for beautiful public picture. It is ideal for photographers and in-house creative staff, as well as marketing initiatives. 
+Fotozer is a website clone, inspired by [Flickr](https://www.flickr.com/). Fotozer can be used for photo-sharing, photo organizing, and archiving. Community members can share views and fave for beautiful public picture. It is ideal for photographers and in-house creative staff, as well as marketing initiatives. 
 
 **Live site:**  [Fotozer](https://fotozer.herokuapp.com/) 
 
@@ -135,7 +135,7 @@ To deploy this project run
   --> drop: npx dotenv sequelize db:drop
 ```
 
-## 🗓To-do-list
+## 🗓 To-do-list
 
 * **Albums Feature**
 
