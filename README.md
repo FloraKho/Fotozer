@@ -142,7 +142,7 @@ To deploy this project run
 (database, redux, and Albums Page for user are completed, checked in `Albums` branch)
 
 
-## Appendix
+## 🐼 Appendix
 
 * Photos credited to [Unsplash](https://unsplash.com/) and [Flickr](https://www.flickr.com/)
 * Icons credited to [Font awesome](https://fontawesome.com/) , [ICONS8](https://icons8.com/), and [flaticon](https://www.flaticon.com/)
