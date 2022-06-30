@@ -2,7 +2,7 @@ const express = require('express');
 const asyncHandler = require('express-async-handler');
 
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { User, Photo, Favorite } = require('../../db/models');
+const { User, Photo, Favorite, Album } = require('../../db/models');
 
 //Validating Signup Request Body
 const { check } = require('express-validator');
@@ -73,6 +73,21 @@ router.get('/:userId/favorites', asyncHandler(async (req, res) => {
     })
     return res.json(faves);
 }))
+
+//get user albums
+
+router.get('/:userId/albums', asyncHandler(async (req, res) => {
+    const { userId } = req.params;
+    const albums = await Album.findAll({
+        order: [['createdAt', 'DESC']],
+        where: {
+            userId: userId
+        },
+        include: User
+    })
+    return res.json(albums);
+}))
+
 
 
 module.exports = router;

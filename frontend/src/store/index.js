@@ -5,6 +5,8 @@ import imageReducer from "./explore";
 import photoReducer from "./photos";
 import sessionReducer from './session';
 import favoriteReducer from './favorites';
+import albumReducer from "./albums";
+import albumphotoReducer from './albumphotos';
 
 const rootReducer = combineReducers({
   // add reducer functions here
@@ -12,7 +14,9 @@ const rootReducer = combineReducers({
   photos: photoReducer,
   images: imageReducer,
   comments: commentReducer,
-  favorites: favoriteReducer
+  favorites: favoriteReducer,
+  albums: albumReducer,
+  albumphotos: albumphotoReducer
 });
 
 let enhancer;

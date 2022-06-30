@@ -12,6 +12,41 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
+    return queryInterface.bulkInsert('AlbumPhotos', [
+      {
+        albumId: 1,
+        photoId: 6
+      },
+      {
+        albumId: 1,
+        photoId: 16
+      },
+      {
+        albumId: 2,
+        photoId: 1
+      },
+      {
+        albumId: 2,
+        photoId: 17
+      },
+      {
+        albumId: 3,
+        photoId: 2
+      },
+      {
+        albumId: 3,
+        photoId: 7
+      },
+      {
+        albumId: 4,
+        photoId: 3
+      },
+      {
+        albumId: 4,
+        photoId: 8
+      }
+
+    ], {});
   },
 
   down: (queryInterface, Sequelize) => {
@@ -22,5 +57,6 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('People', null, {});
     */
+    return queryInterface.bulkDelete('AlbumPhotos', null, {});
   }
 };

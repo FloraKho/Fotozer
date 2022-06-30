@@ -32,7 +32,6 @@ function FavoriteButton({ photoId, sessionUser }) {
     const handleUnlike = async (e) => {
         e.preventDefault();
         await dispatch(removeFave(currentFave.id));
-       
     }
 
  

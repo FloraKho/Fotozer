@@ -34,7 +34,6 @@ function Search() {
         } else {
             setFilter(findData);
         }
-        
     }
 
     const clear = () => {

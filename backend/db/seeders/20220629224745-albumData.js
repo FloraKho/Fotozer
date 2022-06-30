@@ -12,6 +12,24 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
+    return queryInterface.bulkInsert('Albums', [
+    {
+      albumName: 'Wallpaper',
+      userId: 1
+    }, 
+    {
+      albumName: 'Travel',
+      userId: 1
+    }, {
+      albumName: 'Wallpaper',
+      userId: 2
+    }
+      , {
+      albumName: 'Wallpaper',
+      userId: 3
+    }
+
+    ], {});
   },
 
   down: (queryInterface, Sequelize) => {
@@ -22,5 +40,6 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('People', null, {});
     */
+    return queryInterface.bulkDelete('Albums', null, {});
   }
 };

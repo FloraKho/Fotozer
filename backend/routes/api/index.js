@@ -5,6 +5,8 @@ const photosRouter = require('./photos.js');
 const exploreRouter = require('./explore.js');
 const commentsRouter = require('./comments.js');
 const favoritesRouter = require('./favorites.js');
+const albumsRouter = require('./albums');
+const albumphotosRouter = require('./albumphotos');
 
 router.use('/session', sessionRouter);
 router.use('/users', usersRouter);
@@ -12,6 +14,8 @@ router.use('/photos', photosRouter);
 router.use('/explore', exploreRouter);
 router.use('/comments', commentsRouter);
 router.use('/favorites', favoritesRouter);
+router.use('/albums', albumsRouter);
+router.use('/albumphotos', albumphotosRouter);
 
 
 
