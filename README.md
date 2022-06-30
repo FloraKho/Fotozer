@@ -139,7 +139,7 @@ To deploy this project run
 
 * **Albums Feature**
 
-(database, redux, and Albums Page for user are completed, checked in `Albums` branch)
+(database, redux, and Albums Page for user are completed, check `Albums` branch)
 
 
 ## 🐼 Appendix
