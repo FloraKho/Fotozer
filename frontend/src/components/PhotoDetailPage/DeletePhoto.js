@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { removePhoto } from '../../store/photos';
 import './DeletePhoto.css';
 
-function DeletePhoto ({photo}) {
+function DeletePhoto({ photo }) {
     const [showModal, setShowModal] = useState(false);
     const dispatch = useDispatch();
     const history = useHistory();
@@ -21,21 +21,16 @@ function DeletePhoto ({photo}) {
         <>
             <div className='delete-btn'>
                 <h2 onClick={() => setShowModal(true)}><i className="fa-solid fa-trash-can"></i></h2>
-            </div> 
+            </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    {/* <div className='delete-form'> */}
-                        {/* <div className='delete-title'> */}
-                            <h2 className='modal-title'>Delete Photo</h2>
-                        {/* </div> */}
-                        {/* <div className='delete-message'> */}
+                    <h2 className='modal-title'>Delete Photo</h2>
                     <p className='modal-text'>Are you sure you want to delete this photo?</p>
-                        {/* </div> */}
-                        <div className='modal-button'>
-                            <button className='modal-button-cancel' onClick={() => setShowModal(false)}>Cancel</button>
-                            <button className='modal-button-confirm' onClick={handleDeleteSubmit}>Delete</button>
-                        </div>
-                    {/* </div> */}
+                    <div className='modal-button'>
+                        <button className='modal-button-cancel' onClick={() => setShowModal(false)}>Cancel</button>
+                        <button className='modal-button-confirm' onClick={handleDeleteSubmit}>Delete</button>
+                    </div>
+
                 </Modal>
             )}
         </>

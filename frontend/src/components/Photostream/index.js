@@ -29,9 +29,13 @@ function Photostream() {
 
 
 
-    if (!photoArr.length > 0) return (
-        <p className='loading'><i className="fa-solid fa-spinner"></i> Loading...</p>
-    )
+    // if (!photoArr.length) return (
+    //     <>
+    //     <Banner sessionUser={sessionUser} />
+    //     <MyNavigation />
+    //     </>
+    // )
+    
     return (
         <>
             <div className='photostream-page'>
@@ -40,7 +44,7 @@ function Photostream() {
                 <MyNavigation />
 
                 <div className='myphoto-gallery'>
-                    {photoArr.map((photo) => {
+                    {photoArr && photoArr.map((photo) => {
                         return (
                             <div key={photo.id} className='myphoto-display' onClick={(e) => {
                                 e.preventDefault();

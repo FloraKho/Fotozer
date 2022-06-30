@@ -154,7 +154,7 @@ function PhotoDetailPage() {
                 <div className='pd-3'>
                     <Comments photoId={photoId} />
                     <div className='pd-3-right'>
-                        <p>I am albums!</p>
+                        <p></p>
                     </div>
                 </div>
             </div>

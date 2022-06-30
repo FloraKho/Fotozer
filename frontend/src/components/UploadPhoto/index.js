@@ -14,25 +14,11 @@ function UploadPage() {
     const [errors, setErrors] = useState([]);
     const [title, setTitle] = useState('');
     const [description, setDiscription] = useState('');
-    // const [imgURL, setImgURL] = useState('');
     const [image, setImage] = useState(null);
 
 
     useEffect(() => {
         const errors = [];
-        // function isValidURL(str) {
-        //     var pattern = new RegExp('^(https?:\\/\\/)?' +
-        //         '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' +
-        //         '((\\d{1,3}\\.){3}\\d{1,3}))' +
-        //         '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' +
-        //         '(\\?[;&a-z\\d%_.~+=-]*)?' +
-        //         '(\\#[-a-z\\d_]*)?$', 'i');
-        //     return !!pattern.test(str);
-        // }
-
-        // if (!isValidURL(imgURL)) {
-        //     errors.push("Please enter a valid image url");
-        // }
         if (!image) {
             errors.push("Please choose an image file");
         }
@@ -44,7 +30,6 @@ function UploadPage() {
             errors.push("Please enter a title");
         }
         setErrors(errors);
-        // }, [title, description, imgURL])
     }, [title, description, image]);
 
     useEffect(() => {
@@ -106,17 +91,6 @@ function UploadPage() {
                                 <textarea type='text' placeholder='Add a description' className='up-form-description' value={description} onChange={e => setDiscription(e.target.value)} />
                             </label>
                             <div className='box'>
-                            {/* <label htmlFor="upload-input">
-                                <img
-                                    src='../photos/folder.png'
-                                    draggable={"false"}
-                                    alt="placeholder"
-                                    style={{ width: 100, height: 100 }}
-                                />
-                                <p style={{ color: "#444" }}>Click to upload image</p>
-                            </label> */}
-                                {/* <textarea required type='text' placeholder='' value={imgURL} onChange={(e) => setImgURL(e.target.value)} />
-                            <span>Enter Image URL</span> */}
                                 <input type='file' onChange={updateFile} accept="image/png, image/jpeg" />
                           </div>
                       

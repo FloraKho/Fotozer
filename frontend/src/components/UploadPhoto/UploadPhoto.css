@@ -3,7 +3,6 @@
     padding: 0;
     height: 100vh;
     overflow: hidden;
-    /* text-align: center; */
     font-family: 'Roboto', sans-serif;
     background-color: #8BC6EC;
     background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
@@ -19,7 +18,6 @@
     height: 600px;
     background-color: white;
     border-radius: 10px;
-
 }
 
 
@@ -37,7 +35,7 @@
     font-size: 14px;
     font-family: 'Kanit', sans-serif;
     margin: 5px 5px;
-    
+
 }
 
 .up-back-btn:focus {
@@ -112,7 +110,7 @@
     margin-left: 10px;
 }
 
-input[type='file']{
+input[type='file'] {
     text-align: center;
     font-family: 'Kanit', sans-serif;
 }
@@ -168,7 +166,8 @@ input[type='file']{
     border-radius: 8px;
     box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
     box-sizing: border-box;
-    color: #111414;;
+    color: #111414;
+    ;
     cursor: pointer;
     display: inline-block;
     font-size: 14px;
@@ -189,3 +188,4 @@ input[type='file']{
     box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
     outline: 0;
 }
+

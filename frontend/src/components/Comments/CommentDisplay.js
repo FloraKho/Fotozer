@@ -96,7 +96,6 @@ function CommentDisplay({ comment, sessionUser, photoId }) {
                             </form>
                         ) : (
                             <div className='comment-2-content-display'>
-                                {/* <div onClick={handleEditState}> */}
                                 <p className='comment-2-content'>{currentContent}</p>
                             </div>
                         )}

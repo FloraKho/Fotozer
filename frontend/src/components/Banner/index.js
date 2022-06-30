@@ -3,7 +3,6 @@ import './Banner.css';
 function Banner ({sessionUser}){
 
     return(
-
         <div className='banner'>
             <div className='banner-info'>
                 <div className='banner-info-img'>
