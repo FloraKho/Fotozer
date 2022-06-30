@@ -257,6 +257,7 @@
     color: #fff;
     font-size: 30px;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .fa-star:hover {
