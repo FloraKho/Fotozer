@@ -25,19 +25,19 @@ You can access to Login Page, Signup Page here. Also, we have a demo user button
 ## 💚 Explore Page
 You can see all public picture from all community members.
 
-<img width="1918" alt="Screen Shot 2022-06-30 at 13 31 39" src="https://user-images.githubusercontent.com/91162637/176776987-ce176d90-4129-41c5-818f-29f679d136f2.png">
+<img width="1918" alt="Screen Shot 2022-07-01 at 11 03 40" src="https://user-images.githubusercontent.com/91162637/176947545-2e9469fa-b850-44e4-82b7-4b6c5438bb7a.png">
 
 ## 💙 Photostream
 
 You can see your personal photo in photostream page.
 
-<img width="1428" alt="Screen Shot 2022-06-30 at 13 31 59" src="https://user-images.githubusercontent.com/91162637/176777272-ed732652-60d2-4cf9-a2b5-d3846ea824b1.png">
+<img width="1920" alt="Screen Shot 2022-07-01 at 11 04 39" src="https://user-images.githubusercontent.com/91162637/176947611-20e33d18-881f-49d2-89a0-ee1d274926f4.png">
 
 ## 💛 Favorites
 
 When you star a photographer's picture, the picture will show up in `/favorites`
 
-<img width="1437" alt="Screen Shot 2022-06-30 at 13 32 09" src="https://user-images.githubusercontent.com/91162637/176777382-b845f83b-50f8-4491-9117-dd2c635e1e43.png">
+<img width="1920" alt="Screen Shot 2022-07-01 at 11 04 21" src="https://user-images.githubusercontent.com/91162637/176947584-943798ac-81b2-4183-a970-766628f7bc12.png">
 
 ## 🤎 Search Page
 
