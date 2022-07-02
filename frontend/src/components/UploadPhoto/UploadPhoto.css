@@ -110,11 +110,27 @@
     margin-left: 10px;
 }
 
-input[type='file'] {
+input[type=file] {
     text-align: center;
     font-family: 'Kanit', sans-serif;
+    cursor: pointer;
 }
 
+
+input[type=file]::file-selector-button {
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background-color: #3f8efc;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Kanit', sans-serif;
+    margin-bottom: 5px;
+}
+
+input[type=file]::file-selector-button:hover {
+    background-color: #4361ee;
+}
 
 .up-upload-button {
     background-color: #4361ee;
@@ -160,6 +176,10 @@ input[type='file'] {
     box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
 }
 
+.up-upload-button:focus {
+    background-color: #52b788;
+}
+
 .up-cancel-button {
     background-color: #fff;
     border: 1px solid #d5d9d9;
@@ -188,4 +208,3 @@ input[type='file'] {
     box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
     outline: 0;
 }
-
